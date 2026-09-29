@@ -923,7 +923,7 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 .statement__cols { margin-top: clamp(40px, 5vw, 72px); }
 
 /* ---------- Lift reviews: cards ride the empty sides of the frame ---------- */
-.review-card { width: min(300px, 22vw); }
+.review-card { width: min(270px, 19vw); }
 .review-card--1 { top: 22%; left: 3vw; }
 .review-card--2 { top: 22%; right: 3vw; }
 .review-card--3 { top: 46%; left: 3vw; }
