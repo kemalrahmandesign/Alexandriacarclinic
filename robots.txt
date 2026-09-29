@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alexandriacarclinic.com/sitemap.xml

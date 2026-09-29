@@ -1,0 +1,74 @@
+name: Prepare media
+
+# Downloads the Higgsfield-generated films, trims / smooths them, and
+# re-encodes with a keyframe every 4 frames so scroll-scrubbing
+# (currentTime seeks) is cheap. Also writes contact sheets to media/qa/
+# so the output can be checked without a video player. Commits to the
+# branch it ran on, so the files are served same-origin.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  encode:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Download and re-encode films
+        run: |
+          set -euo pipefail
+          mkdir -p media/qa
+          grep -v '^#' media/manifest.txt | while read -r name url trim interp; do
+            [ -z "${name:-}" ] && continue
+            echo "== $name"
+            trim="${trim:-0}"
+            curl -fsSL "$url" -o "/tmp/$name.src.mp4"
+            dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "/tmp/$name.src.mp4")
+            fps=$(ffprobe -v error -select_streams v:0 -show_entries stream=r_frame_rate -of csv=p=0 "/tmp/$name.src.mp4")
+            echo "source: duration=$dur fps=$fps trim_end=$trim interp=${interp:--}"
+            keep=$(awk -v d="$dur" -v t="$trim" 'BEGIN { printf "%.3f", d - t }')
+            vf="null"
+            if [ "${interp:--}" = "interp" ]; then
+              vf="minterpolate=fps=48:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1"
+            fi
+            ffmpeg -nostdin -y -i "/tmp/$name.src.mp4" -t "$keep" -an -vf "$vf" \
+              -c:v libx264 -preset slow -crf 20 -g 4 \
+              -pix_fmt yuv420p -movflags +faststart \
+              "media/$name.mp4"
+            # QA contact sheets: whole encoded clip, and the source's last 3s
+            ffmpeg -nostdin -y -i "media/$name.mp4" \
+              -vf "fps=1.5,scale=400:-1,tile=4x3" -frames:v 1 -q:v 4 "media/qa/$name-sheet.jpg"
+            ffmpeg -nostdin -y -sseof -3 -i "/tmp/$name.src.mp4" \
+              -vf "fps=4,scale=400:-1,tile=4x3" -frames:v 1 -q:v 4 "media/qa/$name-src-tail.jpg"
+          done
+          # the lift plays in reverse, so its poster is the LAST frame
+          ffmpeg -nostdin -y -sseof -0.15 -i media/lift.mp4 -frames:v 1 \
+            -vf scale=1280:-1 -q:v 4 media/lift-poster.jpg
+          ls -la media media/qa
+
+      - name: Download and optimize stills
+        run: |
+          set -euo pipefail
+          grep -v '^#' media/images.txt | while read -r name url; do
+            [ -z "${name:-}" ] && continue
+            echo "== $name"
+            curl -fsSL "$url" -o "/tmp/$name.src"
+            # posters only show before a film decodes: 1280 JPEG is plenty
+            ffmpeg -nostdin -y -i "/tmp/$name.src" -vf scale=1280:-1 -q:v 4 "media/$name.jpg"
+          done
+          ls -la media
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add media
+          git commit -m "Encode scroll films and posters" || echo "nothing to commit"
+          git push

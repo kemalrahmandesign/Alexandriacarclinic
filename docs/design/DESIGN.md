@@ -13,7 +13,7 @@ Adapted from the ORYZO style reference (`DESIGN_4.md`). **Structure, type rules,
 | Midnight | `#050B16` | `--color-midnight` | Page canvas and deepest background, a blue-black, never pure black. The void behind every reveal. |
 | Uniform Navy | `#0F2A4A` | `--color-uniform-navy` | Elevated surface and the one filled button. ⚠️ Sample the exact uniform blue from Zack's photos and adjust. |
 | Steel Line | `#24344B` | `--color-steel-line` | Hairlines, dashed section dividers, card outlines |
-| Slate | `#5F7189` | `--color-slate` | Secondary dividers, muted labels, disabled states |
+| Slate | `#8497B0` | `--color-slate` | Muted labels and secondary text (lightened from the first draft so small labels pass contrast on Midnight) |
 | Brass | `#C9A45C` | `--color-brass` | Accent, **editorial credit only**: the "Cars for sale" label, the phone number link, small tags. Never a button. |
 
 ## Tokens: Typography
