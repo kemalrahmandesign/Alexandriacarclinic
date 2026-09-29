@@ -25,20 +25,20 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p media/qa
-          grep -v '^#' media/manifest.txt | while read -r name url trim interp; do
+          grep -v '^#' media/manifest.txt | while read -r name url tstart tend interp; do
             [ -z "${name:-}" ] && continue
             echo "== $name"
-            trim="${trim:-0}"
+            tstart="${tstart:-0}"; tend="${tend:-0}"
             curl -fsSL "$url" -o "/tmp/$name.src.mp4"
             dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "/tmp/$name.src.mp4")
             fps=$(ffprobe -v error -select_streams v:0 -show_entries stream=r_frame_rate -of csv=p=0 "/tmp/$name.src.mp4")
-            echo "source: duration=$dur fps=$fps trim_end=$trim interp=${interp:--}"
-            keep=$(awk -v d="$dur" -v t="$trim" 'BEGIN { printf "%.3f", d - t }')
+            echo "source: duration=$dur fps=$fps trim_start=$tstart trim_end=$tend interp=${interp:--}"
+            keep=$(awk -v d="$dur" -v a="$tstart" -v b="$tend" 'BEGIN { printf "%.3f", d - a - b }')
             vf="null"
             if [ "${interp:--}" = "interp" ]; then
               vf="minterpolate=fps=48:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1"
             fi
-            ffmpeg -nostdin -y -i "/tmp/$name.src.mp4" -t "$keep" -an -vf "$vf" \
+            ffmpeg -nostdin -y -ss "$tstart" -i "/tmp/$name.src.mp4" -t "$keep" -an -vf "$vf" \
               -c:v libx264 -preset slow -crf 20 -g 4 \
               -pix_fmt yuv420p -movflags +faststart \
               "media/$name.mp4"
@@ -47,6 +47,13 @@ jobs:
               -vf "fps=1.5,scale=400:-1,tile=4x3" -frames:v 1 -q:v 4 "media/qa/$name-sheet.jpg"
             ffmpeg -nostdin -y -sseof -3 -i "/tmp/$name.src.mp4" \
               -vf "fps=4,scale=400:-1,tile=4x3" -frames:v 1 -q:v 4 "media/qa/$name-src-tail.jpg"
+            # full-size frames at 25/50/75% of the encoded clip, to check for warping
+            enc=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "media/$name.mp4")
+            for pct in 25 50 75; do
+              ts=$(awk -v d="$enc" -v p="$pct" 'BEGIN { printf "%.2f", d * p / 100 }')
+              ffmpeg -nostdin -y -ss "$ts" -i "media/$name.mp4" -frames:v 1 \
+                -vf scale=1280:-1 -q:v 3 "media/qa/$name-f$pct.jpg"
+            done
           done
           # the lift plays in reverse, so its poster is the LAST frame
           ffmpeg -nostdin -y -sseof -0.15 -i media/lift.mp4 -frames:v 1 \

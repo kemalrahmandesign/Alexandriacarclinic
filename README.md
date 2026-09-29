@@ -17,8 +17,8 @@ media/team/         3 team photos
 ```
 
 ## Media films
-`media/manifest.txt` lists the Higgsfield clips (name, URL, seconds to trim off the end,
-`interp` to smooth to 48fps). Run **Actions → Prepare media** to download, re-encode
+`media/manifest.txt` lists the Higgsfield clips (name, URL, seconds to trim off the start,
+seconds to trim off the end, `interp` to smooth to 48fps). Run **Actions → Prepare media** to download, re-encode
 (keyframe every 4 frames, needed for smooth scrubbing) and commit `media/hero.mp4`,
 `media/lift.mp4` and their posters. It also writes contact sheets to `media/qa/` to eyeball
 the result. Change a trim value or swap a URL, then run it again.

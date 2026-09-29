@@ -923,13 +923,13 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 .statement__cols { margin-top: clamp(40px, 5vw, 72px); }
 
 /* ---------- Lift reviews: cards ride the empty sides of the frame ---------- */
-.review-card { width: min(340px, 26vw); }
-.review-card--1 { top: 22%; left: 3.5vw; }
-.review-card--2 { top: 22%; right: 3.5vw; }
-.review-card--3 { top: 46%; left: 3.5vw; }
-.review-card--4 { top: 46%; right: 3.5vw; }
-.review-card--5 { top: 70%; left: 3.5vw; }
-.review-card--6 { top: 70%; right: 3.5vw; }
+.review-card { width: min(300px, 22vw); }
+.review-card--1 { top: 22%; left: 3vw; }
+.review-card--2 { top: 22%; right: 3vw; }
+.review-card--3 { top: 46%; left: 3vw; }
+.review-card--4 { top: 46%; right: 3vw; }
+.review-card--5 { top: 70%; left: 3vw; }
+.review-card--6 { top: 70%; right: 3vw; }
 
 /* ---------- Photo slots (until real photos land) ---------- */
 .photo {
@@ -1213,7 +1213,7 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 }
 
 @media (max-width: 640px) {
-  .hero__film { object-position: 78% 50%; }
+  .hero__film { object-position: 58% 50%; }
   .services, .cars, .about { padding-left: var(--spacing-24); padding-right: var(--spacing-24); }
   .cars__heading, .about__heading { font-size: clamp(34px, 11vw, 52px); }
   .cars__lead, .about__lead { font-size: clamp(19px, 5.4vw, 24px); }
