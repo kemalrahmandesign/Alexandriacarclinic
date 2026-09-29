@@ -897,7 +897,6 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
    ===================================================== */
 
 /* ---------- Hero overrides: long name, car low + right ---------- */
-.pin--hero { height: 280vh; }
 .pin--lift { height: 420vh; }
 
 .hero__film {
@@ -907,16 +906,18 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 
 .hero__lockup { top: clamp(84px, 12vh, 132px); }
 
-/* centered lockup, large two-line name */
-.hero__lockup { text-align: center; top: clamp(76px, 10vh, 120px); }
+/* Loco-style lockup: left aligned, huge, CTAs underneath on the left */
+.hero__lockup { top: clamp(84px, 13vh, 150px); }
 .display {
-  font-size: clamp(52px, 9.6vw, 156px);
-  line-height: 0.88;
-  margin: 0;
+  font-size: clamp(56px, 12.2vw, 200px);
+  line-height: 0.86;
+  margin: 0 0 0 -0.05em;
 }
-.hero__actions { justify-content: center; }
-.hero__sub { max-width: none; font-size: clamp(16px, 1.6vw, 22px); }
+.hero__sub { max-width: none; }
 
+/* hero is not pinned: it scrolls away with the page while the film plays */
+.pin--hero { height: 100svh; }
+.pin--hero .pin__stage { position: relative; }
 
 .label--accent { color: var(--color-brass); }
 
@@ -1273,7 +1274,7 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
   .nav__item { font-size: 10px; letter-spacing: 0.01em; padding-bottom: 3px; }
 
   /* hero name must fit the viewport, not overflow it */
-  .display { font-size: clamp(36px, 11.5vw, 62px); line-height: 0.9; }
+  .display { font-size: clamp(40px, 13vw, 72px); line-height: 0.9; }
   .hero__lockup { top: clamp(76px, 13vh, 120px); bottom: 92px; }
   .hero__tagline { font-size: 11px; }
   .hero__sub { font-size: 15px; margin-top: var(--spacing-14); }

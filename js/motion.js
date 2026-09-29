@@ -196,8 +196,7 @@
       scrubVideo(pin, p);
       if (heroLockup) {
         var lockupVis = 1 - fade(p, 0.82, 0.97);
-        heroLockup.style.transform = 'translateY(' + (fade(p, 0.7, 1) * -60) + 'px)';
-        heroLockup.style.opacity = String(lockupVis);
+                heroLockup.style.opacity = String(lockupVis);
         // faded-out CTAs must stop catching taps: opacity alone
         // leaves invisible but clickable buttons over the film
         heroLockup.style.pointerEvents = lockupVis < 0.35 ? 'none' : '';
@@ -243,7 +242,10 @@
       var rect = pin.el.getBoundingClientRect();
       if (rect.bottom < -200 || rect.top > window.innerHeight + 200) return;
       var span = pin.el.offsetHeight - window.innerHeight;
-      if (span <= 0) return;
+      // the hero is not pinned: its film plays across one viewport of
+      // scroll, so at half the clip you are half way down the page
+      if (pin.name === 'hero') span = window.innerHeight;
+      else if (span <= 0) return;
       var p = clamp(-rect.top / span, 0, 1);
       var fn = handlers[pin.name];
       if (fn) fn(pin, p);
