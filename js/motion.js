@@ -193,9 +193,11 @@
       // The M2 drives out of frame across the first ~75% of the
       // scrub; the last quarter is the empty floor, where the
       // headline and buttons stay put and then ride away.
-      scrubVideo(pin, p);
+      // film runs across 1.5 viewports of scroll: 1 pinned + the first half
+      // screen while the hero scrolls away
+      scrubVideo(pin, clamp(pin.raw / 1.5, 0, 1));
       if (heroLockup) {
-        var lockupVis = 1 - fade(p, 0.82, 0.97);
+        var lockupVis = 1 - fade(p, 0.55, 0.95);
                 heroLockup.style.opacity = String(lockupVis);
         // faded-out CTAs must stop catching taps: opacity alone
         // leaves invisible but clickable buttons over the film
@@ -204,10 +206,10 @@
       }
       if (heroCue) heroCue.style.opacity = String(1 - fade(p, 0.02, 0.1));
       // corner wordmark SNAPS in as the big lockup leaves
-      if (navWordmark) navWordmark.classList.toggle('is-on', p > 0.8);
+      if (navWordmark) navWordmark.classList.toggle('is-on', p > 0.6);
       // phone quick-book pill stays out of the hero; the real CTAs
       // are already on screen. It returns as the hero scrolls away.
-      if (bookPill) bookPill.classList.toggle('is-hidden', p < 0.9);
+      if (bookPill) bookPill.classList.toggle('is-hidden', p < 0.95);
     },
 
     lift: function (pin, p) {
@@ -242,10 +244,8 @@
       var rect = pin.el.getBoundingClientRect();
       if (rect.bottom < -200 || rect.top > window.innerHeight + 200) return;
       var span = pin.el.offsetHeight - window.innerHeight;
-      // the hero is not pinned: its film plays across one viewport of
-      // scroll, so at half the clip you are half way down the page
-      if (pin.name === 'hero') span = window.innerHeight;
-      else if (span <= 0) return;
+      if (span <= 0) return;
+      pin.raw = -rect.top / window.innerHeight; // viewports scrolled into this section
       var p = clamp(-rect.top / span, 0, 1);
       var fn = handlers[pin.name];
       if (fn) fn(pin, p);

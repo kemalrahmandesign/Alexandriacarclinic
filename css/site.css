@@ -907,7 +907,7 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 .hero__lockup { top: clamp(84px, 12vh, 132px); }
 
 /* Loco-style lockup: left aligned, huge, CTAs underneath on the left */
-.hero__lockup { top: clamp(84px, 13vh, 150px); }
+.hero__lockup { top: clamp(120px, 21vh, 230px); }
 .display {
   font-size: clamp(56px, 12.2vw, 200px);
   line-height: 0.86;
@@ -915,9 +915,8 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 }
 .hero__sub { max-width: none; }
 
-/* hero is not pinned: it scrolls away with the page while the film plays */
-.pin--hero { height: 100svh; }
-.pin--hero .pin__stage { position: relative; }
+/* hero pins for one screen of scroll, then scrolls away while the film finishes */
+.pin--hero { height: 200svh; }
 
 .label--accent { color: var(--color-brass); }
 
