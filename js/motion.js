@@ -193,10 +193,10 @@
       // The M2 drives out of frame across the first ~75% of the
       // scrub; the last quarter is the empty floor, where the
       // headline and buttons stay put and then ride away.
-      scrubVideo(pin, fade(p, 0, 0.55));
+      scrubVideo(pin, p);
       if (heroLockup) {
-        var lockupVis = 1 - fade(p, 0.62, 0.85);
-        heroLockup.style.transform = 'translateY(' + (fade(p, 0.5, 0.9) * -60) + 'px)';
+        var lockupVis = 1 - fade(p, 0.82, 0.97);
+        heroLockup.style.transform = 'translateY(' + (fade(p, 0.7, 1) * -60) + 'px)';
         heroLockup.style.opacity = String(lockupVis);
         // faded-out CTAs must stop catching taps: opacity alone
         // leaves invisible but clickable buttons over the film
@@ -205,10 +205,10 @@
       }
       if (heroCue) heroCue.style.opacity = String(1 - fade(p, 0.02, 0.1));
       // corner wordmark SNAPS in as the big lockup leaves
-      if (navWordmark) navWordmark.classList.toggle('is-on', p > 0.62);
+      if (navWordmark) navWordmark.classList.toggle('is-on', p > 0.8);
       // phone quick-book pill stays out of the hero; the real CTAs
       // are already on screen. It returns as the hero scrolls away.
-      if (bookPill) bookPill.classList.toggle('is-hidden', p < 0.8);
+      if (bookPill) bookPill.classList.toggle('is-hidden', p < 0.9);
     },
 
     lift: function (pin, p) {

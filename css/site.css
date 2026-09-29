@@ -897,7 +897,7 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
    ===================================================== */
 
 /* ---------- Hero overrides: long name, car low + right ---------- */
-.pin--hero { height: 240vh; }
+.pin--hero { height: 280vh; }
 .pin--lift { height: 420vh; }
 
 .hero__film {
