@@ -897,7 +897,7 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
    ===================================================== */
 
 /* ---------- Hero overrides: long name, car low + right ---------- */
-.pin--hero { height: 280vh; }
+.pin--hero { height: 240vh; }
 .pin--lift { height: 420vh; }
 
 .hero__film {
@@ -907,13 +907,16 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 
 .hero__lockup { top: clamp(84px, 12vh, 132px); }
 
-/* two-line name sized to stay inside the top 45% of the frame */
+/* centered lockup, large two-line name */
+.hero__lockup { text-align: center; top: clamp(76px, 10vh, 120px); }
 .display {
-  font-size: clamp(44px, 7.2vw, 116px);
-  line-height: 0.9;
+  font-size: clamp(52px, 9.6vw, 156px);
+  line-height: 0.88;
+  margin: 0;
 }
+.hero__actions { justify-content: center; }
+.hero__sub { max-width: none; font-size: clamp(16px, 1.6vw, 22px); }
 
-.hero__sub { max-width: 34em; }
 
 .label--accent { color: var(--color-brass); }
 
@@ -923,13 +926,6 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 .statement__cols { margin-top: clamp(40px, 5vw, 72px); }
 
 /* ---------- Lift reviews: cards ride the empty sides of the frame ---------- */
-.review-card { width: min(270px, 19vw); }
-.review-card--1 { top: 22%; left: 3vw; }
-.review-card--2 { top: 22%; right: 3vw; }
-.review-card--3 { top: 46%; left: 3vw; }
-.review-card--4 { top: 46%; right: 3vw; }
-.review-card--5 { top: 70%; left: 3vw; }
-.review-card--6 { top: 70%; right: 3vw; }
 
 /* ---------- Photo slots (until real photos land) ---------- */
 .photo {
@@ -1353,3 +1349,16 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
   .visit__phone { font-size: clamp(28px, 9vw, 40px); }
   .footer__row { flex-direction: column; gap: var(--spacing-18); }
 }
+
+/* ---------- Service chips (booking form) ---------- */
+.field--wide { grid-column: 1 / -1; }
+.chips { display: flex; flex-wrap: wrap; gap: var(--spacing-8); }
+.chip {
+  background: transparent; color: var(--color-ivory);
+  border: 1px solid var(--color-steel-line); border-radius: var(--radius-buttons-outlined);
+  padding: 7.5px var(--spacing-14); font: inherit; font-size: 11px;
+  font-weight: var(--font-weight-medium); text-transform: uppercase; cursor: pointer;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.chip:hover { border-color: var(--color-ivory); }
+.chip[aria-pressed="true"] { background: var(--color-ivory); color: var(--color-midnight); border-color: var(--color-ivory); }

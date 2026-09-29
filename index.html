@@ -138,16 +138,6 @@
     </div>
   </section>
 
-  <!-- MAKES MARQUEE -->
-  <div class="marquee" aria-label="Makes we service">
-    <hr class="divider" data-draw>
-    <div class="marquee__track" data-marquee aria-hidden="true">
-      <span>BMW, Mercedes-Benz, Audi, Porsche, Volkswagen, Volvo, MINI, Land Rover, Jaguar, Every make and model</span>
-      <span>BMW, Mercedes-Benz, Audi, Porsche, Volkswagen, Volvo, MINI, Land Rover, Jaguar, Every make and model</span>
-    </div>
-    <hr class="divider" data-draw>
-  </div>
-
   <!-- SERVICES: one index, one image stage. No per-service pages. -->
   <section class="services" id="services" aria-label="Services">
     <div class="services__head">
@@ -256,8 +246,7 @@
           <h3 class="svc-stage__name" data-svc-name></h3>
           <p class="svc-stage__desc" data-svc-desc></p>
           <div class="svc-actions">
-            <a class="btn-pill" href="#contact">Book this service</a>
-            <a class="btn-ghost" href="tel:+17033708870">Call 703.370.8870</a>
+            <button class="btn-pill" type="button" data-request-svc>Request this service</button>
           </div>
         </div>
       </aside>
@@ -291,12 +280,12 @@
       <div class="lift-reviews" aria-label="Customer reviews">
         <div class="review-card review-card--1" data-review-card>
           <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-          <blockquote class="review-card__quote">"Awesome professional people and fast service!"</blockquote>
+          <blockquote class="review-card__quote">"Awesome professional people and fast service! I dropped the car off in the morning, got a clear explanation of what it needed, and had it back the same day."</blockquote>
           <p class="review-card__meta">Alexandria customer</p>
         </div>
         <div class="review-card review-card--2" data-review-card>
           <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-          <blockquote class="review-card__quote">"Zack is honest and fair. He never takes advantage of you."</blockquote>
+          <blockquote class="review-card__quote">"Zack is honest and fair. He tells you what the car actually needs and never tries to take advantage of you, and that is rare."</blockquote>
           <p class="review-card__meta">Alexandria customer</p>
         </div>
         <div class="review-card review-card--3" data-review-card>
@@ -306,7 +295,7 @@
         </div>
         <div class="review-card review-card--4" data-review-card>
           <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-          <blockquote class="review-card__quote">"Great service, quality work and honest repair costs."</blockquote>
+          <blockquote class="review-card__quote">"Great service, quality work and honest repair costs. The price matched the quote and the car drives better than it has in years."</blockquote>
           <p class="review-card__meta">Alexandria customer</p>
         </div>
         <div class="review-card review-card--5" data-review-card>
@@ -316,7 +305,7 @@
         </div>
         <div class="review-card review-card--6" data-review-card>
           <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>
-          <blockquote class="review-card__quote">"Kind, patient and knowledgeable. The whole team are pros."</blockquote>
+          <blockquote class="review-card__quote">"Kind, patient and knowledgeable. The whole team are pros, and they took the time to explain everything before touching the car."</blockquote>
           <p class="review-card__meta">Alexandria customer</p>
         </div>
       </div>
@@ -415,41 +404,22 @@
       </div>
       <div class="field" data-reveal data-reveal-delay="80">
         <label class="label field__label" for="f-email">Email</label>
-        <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+        <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
       </div>
       <div class="field" data-reveal data-reveal-delay="120">
         <label class="label field__label" for="f-vehicle">Vehicle</label>
-        <input id="f-vehicle" name="vehicle" type="text" placeholder="Year, make, model" required>
+        <input id="f-vehicle" name="vehicle" type="text" placeholder="Year, make, model (optional)">
       </div>
-      <div class="field" data-reveal data-reveal-delay="160">
-        <label class="label field__label" for="f-service">Service</label>
-        <select id="f-service" name="service" required>
-          <option value="" selected disabled>Select a service</option>
-          <option>Oil change &amp; maintenance</option>
-          <option>Brakes</option>
-          <option>Engine diagnostics &amp; repair</option>
-          <option>Electrical &amp; battery</option>
-          <option>Steering &amp; suspension</option>
-          <option>A/C &amp; heating</option>
-          <option>Tires &amp; alignment</option>
-          <option>Belts, hoses &amp; cooling</option>
-          <option>Transmission service</option>
-          <option>Engine replacement (reman &amp; used)</option>
-          <option>Transmission replacement</option>
-          <option>Front &amp; rear differentials</option>
-          <option>Collision repair</option>
-          <option>Bodywork &amp; paint</option>
-          <option>Car detailing</option>
-          <option>Undercoating</option>
-          <option>Not sure yet</option>
-        </select>
+      <div class="field field--wide" data-reveal data-reveal-delay="160">
+        <span class="label field__label" id="f-service-label">Services (optional, pick any)</span>
+        <div class="chips" role="group" aria-labelledby="f-service-label" data-svc-chips></div>
       </div>
       <div class="field" data-reveal data-reveal-delay="200">
-        <label class="label field__label" for="f-date">Preferred date</label>
+        <label class="label field__label" for="f-date">Preferred date (optional)</label>
         <input id="f-date" name="date" type="date">
       </div>
       <div class="field" data-reveal data-reveal-delay="240">
-        <label class="label field__label" for="f-notes">Notes</label>
+        <label class="label field__label" for="f-notes">Notes (optional)</label>
         <textarea id="f-notes" name="notes" rows="2" placeholder="What's it doing, or what do you want done?"></textarea>
       </div>
       <div class="book__actions" data-reveal data-reveal-delay="280">

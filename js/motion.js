@@ -193,10 +193,10 @@
       // The M2 drives out of frame across the first ~75% of the
       // scrub; the last quarter is the empty floor, where the
       // headline and buttons stay put and then ride away.
-      scrubVideo(pin, p);
+      scrubVideo(pin, fade(p, 0, 0.55));
       if (heroLockup) {
-        var lockupVis = 1 - fade(p, 0.82, 0.97);
-        heroLockup.style.transform = 'translateY(' + (fade(p, 0.7, 1) * -60) + 'px)';
+        var lockupVis = 1 - fade(p, 0.62, 0.85);
+        heroLockup.style.transform = 'translateY(' + (fade(p, 0.5, 0.9) * -60) + 'px)';
         heroLockup.style.opacity = String(lockupVis);
         // faded-out CTAs must stop catching taps: opacity alone
         // leaves invisible but clickable buttons over the film
@@ -205,10 +205,10 @@
       }
       if (heroCue) heroCue.style.opacity = String(1 - fade(p, 0.02, 0.1));
       // corner wordmark SNAPS in as the big lockup leaves
-      if (navWordmark) navWordmark.classList.toggle('is-on', p > 0.8);
+      if (navWordmark) navWordmark.classList.toggle('is-on', p > 0.62);
       // phone quick-book pill stays out of the hero; the real CTAs
       // are already on screen. It returns as the hero scrolls away.
-      if (bookPill) bookPill.classList.toggle('is-hidden', p < 0.9);
+      if (bookPill) bookPill.classList.toggle('is-hidden', p < 0.8);
     },
 
     lift: function (pin, p) {
@@ -459,8 +459,7 @@
       desc.textContent = item.getAttribute('data-desc');
       var actions = document.createElement('div');
       actions.className = 'svc-actions';
-      actions.innerHTML = '<a class="btn-pill" href="#book">Book this service</a>' +
-        '<a class="btn-ghost" href="tel:+17033708870">Call</a>';
+      actions.innerHTML = '<button class="btn-pill" type="button" data-request-svc>Request this service</button>';
       panel.appendChild(box);
       panel.appendChild(desc);
       panel.appendChild(actions);
@@ -504,6 +503,47 @@
       }
     }
   }
+
+
+  /* ----------------------------------------------------------
+     Service chips in the booking form: click to select, click again
+     to unselect, any number. "Request this service" buttons in the
+     index add that service and jump to the form.
+     ---------------------------------------------------------- */
+  var chipBox = document.querySelector('[data-svc-chips]');
+  var chipFor = {};
+  if (chipBox && svcRoot) {
+    Array.prototype.forEach.call(svcRoot.querySelectorAll('[data-svc]'), function (item) {
+      var name = item.getAttribute('data-name').replace(/&amp;/g, '&');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'chip';
+      b.setAttribute('aria-pressed', 'false');
+      b.textContent = name;
+      b.addEventListener('click', function () {
+        b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+      });
+      chipBox.appendChild(b);
+      chipFor[item.getAttribute('data-name')] = b;
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('[data-request-svc]');
+    if (!btn) return;
+    var item = btn.closest('[data-svc]');
+    var name = item ? item.getAttribute('data-name') : stageName && stageName.innerHTML;
+    if (!name && svcRoot) {
+      var act = svcRoot.querySelector('[data-svc].is-active');
+      name = act && act.getAttribute('data-name');
+    }
+    var chip = chipFor[name];
+    if (chip) chip.setAttribute('aria-pressed', 'true');
+    var dest = document.getElementById('book');
+    var top = dest.getBoundingClientRect().top + window.scrollY;
+    if (hijack) target = clamp(top, 0, maxScroll());
+    else window.scrollTo({ top: top, behavior: 'smooth' });
+  });
 
   /* ----------------------------------------------------------
      Active nav item
@@ -560,6 +600,8 @@
       if (!endpoint) { finish(); return; }
       var data = {};
       new FormData(form).forEach(function (v, k) { data[k] = v; });
+      data.services = Array.prototype.map.call(
+        form.querySelectorAll('.chip[aria-pressed="true"]'), function (c) { return c.textContent; }).join(', ');
       fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },

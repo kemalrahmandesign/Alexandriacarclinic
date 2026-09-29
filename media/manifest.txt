@@ -1,5 +1,5 @@
 # name  source-url  trim_start  trim_end  interp
 # trim_start / trim_end: seconds cut off the start / end of the source clip (0 = keep)
 # interp: "interp" = motion-interpolate to 48fps for smoother scrubbing, "-" = leave as is
-hero https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20260929_191356_c224163e-c879-40d7-87e6-3a3b65fc6543.mp4 2.0 0 interp
-lift https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20260929_190926_785ba44e-6557-4e94-93c6-48bc10b22497.mp4 0 1.0 -
+hero https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20260929_191356_c224163e-c879-40d7-87e6-3a3b65fc6543.mp4 0 0 interp
+lift https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20260929_200027_7393bd2d-fc3e-4ffa-bc61-e352f91f34c0.mp4 0 0.5 -
