@@ -38,6 +38,7 @@ PHOTOS = {
     "body": dict(out="services/bodywork-paint",
         grade=dict(exp=-0.05, contrast=0.45, hi=0.30, sat=1.05, blue=1.4, navy=1.6, warm=1.0, matte=0.7, vig=0.26)),
     "about": dict(out="team/team-1",
+        paste=[(0, 330, 215, 1067), (330, 1000, 580, 1067), (1150, 790, 1420, 905)],
         blur=[(186, 548, 306, 642)],   # Virginia licence plate
         grade=dict(exp=-0.10, contrast=0.50, hi=0.50, sat=1.08, red=0.80, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
 }
