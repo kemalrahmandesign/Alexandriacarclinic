@@ -8,5 +8,3 @@ services/tires-alignment https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9
 services/oil-change https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_172352_75dda43a-4b1e-408b-8f47-a99280e3d6c7.png
 services/bodywork-paint https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_172352_ff76e2da-deeb-42fa-87c5-e4bfaacf45be.png
 services/engine-diagnostics https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_172351_1e447158-0665-4d7e-bb73-670553bd43e5.png
-staging/clean-tire https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_174410_4b13f177-323f-423c-9e50-9ce2ca771be7.png
-staging/tire-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_175723_277281c2-9c09-4894-b7a4-a1ddce487e83.png
