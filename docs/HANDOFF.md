@@ -2,7 +2,7 @@
 
 ## State
 Site is built and deployed as a preview. Hero film, lift film, services index, reviews, cars, About, booking form all work.
-**What is left: photos, form setup, SEO, domain.** Photos first.
+**What is left: form endpoint (needs Zack's email), domain (needs DNS access).** All 16 service photos exist. SEO pass done (title, OG, JSON-LD makesOffer/areaServed/priceRange).
 
 ## Photo status (16 services + About)
 | Service slug | Status | Source |
@@ -16,14 +16,14 @@ Site is built and deployed as a preview. Hero film, lift film, services index, r
 | differentials | done (real) | originals/diff2 (Mazda underside, plate blurred) |
 | bodywork-paint | done (real) | originals/body (hand with sander, NO person, leave it) |
 | team/team-1 (About) | done (real) | originals/oil2 (two men by oil drums) |
-| electrical-battery | MISSING | generate |
-| ac-heating | MISSING | generate |
-| belts-hoses-cooling | MISSING | generate |
-| engine-replacement | MISSING | generate (reman engine on a stand/hoist) |
-| transmission-replacement | MISSING | generate (transmission close-up; the user's pan photo never uploaded) |
-| collision-repair | MISSING | generate |
-| detailing | MISSING | generate |
-| undercoating | MISSING | generate (underside of a nice car on a lift) |
+| electrical-battery | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
+| ac-heating | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
+| belts-hoses-cooling | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
+| engine-replacement | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
+| transmission-replacement | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
+| collision-repair | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
+| detailing | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
+| undercoating | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
 
 ## The photo problem (read this)
 Two looks exist and the user dislikes both as they stand:
