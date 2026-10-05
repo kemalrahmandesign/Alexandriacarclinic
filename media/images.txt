@@ -38,3 +38,4 @@ services/collision-repair https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot
 services/detailing https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_190003_02174748-0fdf-41a0-8c67-809eaf525ff7.png
 services/undercoating https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_190005_f5282006-3e11-4ea7-b3d6-5ee7f0baf6c3.png
 staging/belts-hoses-cooling-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_191003_2e96972e-a9e2-42d8-a422-68dc7058fdb1.png
+staging/belts-hoses-cooling-v3 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_191747_0655d236-bc73-4bf8-ac35-11d325c3a2a4.png
