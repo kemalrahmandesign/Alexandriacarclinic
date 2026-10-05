@@ -13,15 +13,15 @@ Site is built and deployed as a preview. Hero film, lift film, services index, r
 | steering-suspension | done (real) | originals/steering |
 | tires-alignment | done (real) | originals/tires |
 | transmission-service | done (real) | originals/transsvc (impact gun mechanic) |
-| differentials | done (real) | originals/diff2 (Mazda underside, plate blurred) |
-| bodywork-paint | done (real) | originals/body (hand with sander, NO person, leave it) |
+| differentials | done (real; plate now cropped out instead of blurred) | originals/diff2 |
+| bodywork-paint | done (Pexels 6870314 spray gun, graded dark) | stock/px-6870314 |
 | team/team-1 (About) | done (real) | originals/oil2 (two men by oil drums) |
 | electrical-battery | done (Pexels 4374843, cropped to hide text, graded) | stock/px-4374843 |
-| ac-heating | done (Pexels 13302056, graded) | stock/px-13302056 |
-| belts-hoses-cooling | done (Pexels 12765663 BMW M engine, graded; shows M badge) | stock/px-12765663 |
-| engine-replacement | done (AI v2, clean look; user finds AI fake, replace with real if found) | ai-src/engine-replacement-v2 |
-| transmission-replacement | done (supplied gears photo, graded; confirm licence) | ai-src/transmission-gears |
-| collision-repair | done (Pexels 6870314 spray gun, graded dark) | stock/px-6870314 |
+| ac-heating | done (Pexels 11291690 luxury dash vents/climate, graded) | stock/px-11291690 |
+| belts-hoses-cooling | done (Pexels 3757226 timing belt/pulleys, graded) | stock/px-3757226 |
+| engine-replacement | done (Pexels 5158155 polished engine detail, graded) | stock/px-5158155 |
+| transmission-replacement | merged into "Transmission service & replacement" (uses the gears photo) | ai-src/transmission-gears |
+| collision-repair | done (real: originals/body sander shot, moved here from bodywork) | originals/body |
 | detailing | done (Pexels 9784193 red supercar headlight, graded) | stock/px-9784193 |
 | undercoating | done (AI v2 spray macro; replace with real if found) | ai-src/undercoating-v2 |
 
@@ -38,6 +38,10 @@ Two looks exist and the user dislikes both as they stand:
 Decision from the user: **fill missing services with generated shots in the intense, grimy, cinematic look**, and
 (their call) possibly move the existing real photos to that same look so the set is consistent. Ask which for the
 existing 9 only if unclear; do not ask about the missing 8, just generate.
+
+## Copy direction (Oct 5)
+Specialists in every make and model, with real depth on European and luxury cars. Do NOT lead with BMW/Mercedes.
+15 services (transmission service + replacement merged). Booking form services = multi-select dropdown.
 
 ## Photo sourcing (Oct 5)
 User prefers REAL photos (Pexels/Unsplash, free commercial licence) over gpt_image_2_5, which reads as fake/video-game. Spare: stock/px-6873177 (water beads on white car).

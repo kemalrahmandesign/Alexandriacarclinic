@@ -214,8 +214,8 @@
 
     lift: function (pin, p) {
       // The lift film runs (reversed) underneath while five-star
-      // reviews pop up over it as glass cards. Desktop accumulates all
-      // six around the car; phones only fit two slots, so each card
+      // reviews pop up over it as glass cards. Larger screens show them
+      // in left/right pairs; phones only fit two slots, so each card
       // holds its slot for a beat and hands off to the next.
       scrubVideo(pin, p);
       if (pin.caption) pin.caption.classList.toggle('is-on', p > 0.06 && p < 0.9);
@@ -225,9 +225,20 @@
       var n = reviewCards.length;
       var slot = 0.66 / n;
       var phones = window.innerWidth <= 640;
+      // larger screens: cards come in pairs (left + right), each pair
+      // holds for a beat then hands off; the last pair stays up
+      var pairs = Math.ceil(n / 2);
+      var pslot = 0.72 / pairs;
       reviewCards.forEach(function (card, i) {
-        var at = 0.14 + i * slot;
-        var on = phones ? (p > at && p < at + slot * 1.9) : (p > at);
+        var on;
+        if (phones) {
+          var at = 0.14 + i * slot;
+          on = p > at && p < at + slot * 1.9;
+        } else {
+          var k = Math.floor(i / 2);
+          var pat = 0.12 + k * pslot + (i % 2) * pslot * 0.12;
+          on = p > pat && (k === pairs - 1 || p < 0.12 + (k + 1) * pslot);
+        }
         card.classList.toggle('is-on', on);
       });
       // flash guard: settle to the canvas colour at the very end
@@ -508,26 +519,52 @@
 
 
   /* ----------------------------------------------------------
-     Service chips in the booking form: click to select, click again
-     to unselect, any number. "Request this service" buttons in the
-     index add that service and jump to the form.
+     Services dropdown in the booking form: a checkbox list, pick
+     none, one or several. "Request this service" buttons in the
+     index tick that service and jump to the form.
      ---------------------------------------------------------- */
   var chipBox = document.querySelector('[data-svc-chips]');
+  var msel = document.querySelector('[data-msel]');
+  var mselBtn = msel && msel.querySelector('[data-msel-btn]');
+  var mselValue = msel && msel.querySelector('[data-msel-value]');
   var chipFor = {};
+  function mselSummary() {
+    if (!mselValue) return;
+    var picked = Array.prototype.filter.call(chipBox.querySelectorAll('input'), function (c) { return c.checked; })
+      .map(function (c) { return c.value; });
+    mselValue.textContent = !picked.length ? 'Select services'
+      : picked.length <= 2 ? picked.join(', ') : picked.length + ' services selected';
+    msel.classList.toggle('has-value', picked.length > 0);
+  }
+  function mselOpen(open) {
+    if (!msel) return;
+    chipBox.hidden = !open;
+    mselBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    msel.classList.toggle('is-open', open);
+    var field = msel.closest('.field');
+    if (field) field.classList.toggle('is-raised', open);
+  }
   if (chipBox && svcRoot) {
     Array.prototype.forEach.call(svcRoot.querySelectorAll('[data-svc]'), function (item) {
       var name = item.getAttribute('data-name').replace(/&amp;/g, '&');
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'chip';
-      b.setAttribute('aria-pressed', 'false');
-      b.textContent = name;
-      b.addEventListener('click', function () {
-        b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-      });
-      chipBox.appendChild(b);
-      chipFor[item.getAttribute('data-name')] = b;
+      var row = document.createElement('label');
+      row.className = 'msel__opt';
+      var box = document.createElement('input');
+      box.type = 'checkbox';
+      box.value = name;
+      box.addEventListener('change', mselSummary);
+      var txt = document.createElement('span');
+      txt.textContent = name;
+      row.appendChild(box);
+      row.appendChild(txt);
+      chipBox.appendChild(row);
+      chipFor[item.getAttribute('data-name')] = box;
     });
+  }
+  if (mselBtn) {
+    mselBtn.addEventListener('click', function () { mselOpen(chipBox.hidden); });
+    document.addEventListener('click', function (e) { if (!msel.contains(e.target)) mselOpen(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') mselOpen(false); });
   }
 
   document.addEventListener('click', function (e) {
@@ -540,7 +577,7 @@
       name = act && act.getAttribute('data-name');
     }
     var chip = chipFor[name];
-    if (chip) chip.setAttribute('aria-pressed', 'true');
+    if (chip) { chip.checked = true; mselSummary(); }
     var dest = document.getElementById('book');
     var top = dest.getBoundingClientRect().top + window.scrollY;
     if (hijack) target = clamp(top, 0, maxScroll());
@@ -602,8 +639,9 @@
       if (!endpoint) { finish(); return; }
       var data = {};
       new FormData(form).forEach(function (v, k) { data[k] = v; });
-      data.services = Array.prototype.map.call(
-        form.querySelectorAll('.chip[aria-pressed="true"]'), function (c) { return c.textContent; }).join(', ');
+      data.services = Array.prototype.filter.call(
+        form.querySelectorAll('[data-svc-chips] input'), function (c) { return c.checked; })
+        .map(function (c) { return c.value; }).join(', ');
       fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },

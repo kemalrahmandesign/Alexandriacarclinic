@@ -1361,3 +1361,87 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 }
 .chip:hover { border-color: var(--color-ivory); }
 .chip[aria-pressed="true"] { background: var(--color-ivory); color: var(--color-midnight); border-color: var(--color-ivory); }
+
+/* =====================================================
+   Oct 5 sizing pass: larger hero CTA, smaller hero title,
+   bigger service button, review cards and booking form.
+   ===================================================== */
+.display { font-size: clamp(50px, 10.4vw, 172px); }
+
+.cta--book { padding: 20px 26px 20px 32px; font-size: 16px; gap: var(--spacing-14); }
+.cta--book .cta__icon { width: 34px; height: 34px; }
+.cta--call { padding: 13px 28px 13px 14px; }
+.cta--call .cta__icon { width: 38px; height: 38px; }
+.cta__call-label { font-size: 11px; }
+.cta__call-num { font-size: 17px; }
+
+.svc-stage__desc { font-size: 17px; }
+.svc-actions .btn-pill { padding: 20px 34px; font-size: 16px; }
+
+@media (min-width: 901px) { .review-card { width: min(560px, 42vw); padding: 32px; } }
+.review-card__stars { font-size: 17px; margin-bottom: var(--spacing-18); }
+.review-card__quote { font-size: clamp(19px, 1.85vw, 27px); line-height: 1.32; margin-bottom: var(--spacing-18); }
+.review-card__meta { font-size: 13px; }
+@media (min-width: 901px) {
+  /* shown in pairs (see JS): odd cards left, even cards right */
+  .review-card--1, .review-card--3, .review-card--5 { top: 30%; left: 5vw; right: auto; }
+  .review-card--2, .review-card--4, .review-card--6 { top: 44%; right: 5vw; left: auto; }
+}
+@media (min-width: 641px) and (max-width: 900px) {
+  .review-card--1, .review-card--3, .review-card--5 { top: 20%; }
+  .review-card--2, .review-card--4, .review-card--6 { top: 56%; }
+}
+
+.book__form { max-width: 920px; gap: var(--spacing-41) var(--spacing-31); }
+.book__note { font-size: clamp(20px, 1.8vw, 26px); }
+.field__label { font-size: 14px; margin-bottom: var(--spacing-10); }
+.field input,
+.field select,
+.field textarea { font-size: clamp(17px, 1.4vw, 20px); padding: 12px 36px 12px 2px; }
+.field input[type="date"] { min-height: 48px; }
+.field textarea { min-height: 96px; }
+.book__actions .btn-pill { padding: 20px 34px; font-size: 16px; }
+
+/* services multi-select dropdown */
+.msel { position: relative; }
+.msel__btn {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-12);
+  background: transparent; border: 0; border-bottom: 1px solid var(--color-ivory); border-radius: 0;
+  color: var(--color-slate); font: inherit; font-size: clamp(17px, 1.4vw, 20px);
+  font-weight: var(--font-weight-medium); text-transform: uppercase; text-align: left;
+  padding: 12px 2px; cursor: pointer;
+}
+.msel.has-value .msel__btn { color: var(--color-ivory); }
+.msel__chev { flex: none; color: var(--color-ivory); transition: transform 0.3s var(--ease-out-expo); }
+.msel.is-open .msel__chev { transform: rotate(180deg); }
+.msel__panel {
+  position: absolute; z-index: 20; left: 0; right: 0; top: calc(100% + 8px);
+  max-height: min(420px, 60vh); overflow-y: auto;
+  background: var(--color-uniform-navy); border: 1px solid var(--color-steel-line); border-radius: var(--radius-cards);
+  padding: var(--spacing-10) 0;
+}
+.msel__opt {
+  display: flex; align-items: center; gap: var(--spacing-14);
+  padding: 12px var(--spacing-18); cursor: pointer;
+  font-size: 15px; font-weight: var(--font-weight-medium); text-transform: uppercase; color: var(--color-ivory);
+}
+.msel__opt:hover { background: rgba(241, 234, 219, 0.06); }
+.msel__opt input {
+  appearance: none; flex: none; width: 20px; height: 20px; margin: 0;
+  border: 1px solid var(--color-ivory); border-radius: 4px; display: grid; place-items: center; cursor: pointer;
+}
+.msel__opt input:checked { background: var(--color-ivory); }
+.msel__opt input:checked::after {
+  content: ""; width: 10px; height: 6px; margin-top: -2px;
+  border-left: 2px solid var(--color-midnight); border-bottom: 2px solid var(--color-midnight); transform: rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .review-card { padding: 24px; }
+  .review-card__quote { font-size: 19px; }
+}
+/* fields are transformed by the reveal animation (own stacking context):
+   lift the services field above its siblings while the list is open */
+.field--wide { position: relative; }
+.field--wide:has(.msel.is-open), .field--wide.is-raised { z-index: 30; }
+.field .msel__opt input { width: 20px; height: 20px; padding: 0; border: 1px solid var(--color-ivory); border-radius: 4px; }
