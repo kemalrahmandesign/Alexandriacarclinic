@@ -28,5 +28,4 @@ originals/oil2 https://d2ol7oe51mr4n9.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7
 originals/about2 https://d2ol7oe51mr4n9.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/055b2e2a-5f7d-4534-b10c-1ed9e0648e46_resize.jpg
 removed/transsvc https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_183545_2d17f56b-a271-40d5-afc4-053e2a5a38e3.png
 removed/transrep https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_183545_b1ed23d6-162a-4859-81b0-58addf2e860a.png
-removed/oil2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_183545_9123e4b0-ce10-443d-9df3-187cad6ec58a.png
-removed/about2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_183545_2f191f56-9da9-4acb-ba53-8651a71ca30c.png
+removed/oil2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_183934_77ccab4e-8e91-49f8-a864-3499dc2f6e33.png
