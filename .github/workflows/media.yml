@@ -66,9 +66,11 @@ jobs:
           grep -v '^#' media/images.txt | while read -r name url; do
             [ -z "${name:-}" ] && continue
             echo "== $name"
-            curl -fsSL "$url" -o "/tmp/$name.src"
+            mkdir -p "media/$(dirname "$name")"
+            tmp="/tmp/$(basename "$name").src"
+            curl -fsSL "$url" -o "$tmp"
             # posters and photos: max 1600 wide JPEG
-            ffmpeg -nostdin -y -i "/tmp/$name.src" -vf "scale='min(1600,iw)':-1" -q:v 3 "media/$name.jpg"
+            ffmpeg -nostdin -y -i "$tmp" -vf "scale='min(1600,iw)':-1" -q:v 3 "media/$name.jpg"
           done
           ls -la media
 
