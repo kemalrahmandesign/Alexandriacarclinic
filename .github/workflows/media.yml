@@ -7,6 +7,10 @@ name: Prepare media
 # branch it ran on, so the files are served same-origin.
 on:
   workflow_dispatch:
+    inputs:
+      films:
+        description: "Re-encode the films too (slow). Set false for photos only."
+        default: "true"
 
 permissions:
   contents: write
@@ -22,6 +26,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Download and re-encode films
+        if: ${{ github.event.inputs.films != 'false' }}
         run: |
           set -euo pipefail
           mkdir -p media/qa
