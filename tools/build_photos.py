@@ -21,25 +21,25 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PHOTOS = {
     "tires": dict(out="services/tires-alignment",
         paste=[(845, 20, 1090, 290), (140, 470, 470, 880), (470, 470, 590, 580)],
-        grade=dict(exp=-0.10, contrast=0.30, hi=0.30, sat=0.85, red=0.62, navy=0.5, warm=0.30)),
+        grade=dict(exp=-0.15, contrast=0.50, hi=0.40, sat=1.12, red=0.70, blue=1.5, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     "oil": dict(out="services/oil-change",
         paste=[(80, 500, 310, 900), (1225, 560, 1600, 1067)],
-        grade=dict(exp=-0.30, contrast=0.30, hi=0.9, sat=0.90, white=0.90, navy=0.5, warm=0.30)),
+        grade=dict(exp=-0.25, contrast=0.50, hi=0.90, sat=1.10, white=0.90, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     "steering": dict(out="services/steering-suspension",
         paste=[(150, 540, 575, 1067), (0, 790, 150, 1067)],
-        grade=dict(exp=-0.08, contrast=0.30, sat=0.92, navy=0.5, warm=0.30)),
+        grade=dict(exp=-0.12, contrast=0.50, hi=0.30, sat=1.10, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     "engine": dict(out="services/engine-diagnostics",
         paste=[(185, 955, 465, 1067), (640, 995, 745, 1055), (160, 870, 270, 935), (800, 985, 905, 1035)],
-        grade=dict(exp=-0.02, contrast=0.25, hi=0.4, sat=0.92, red=0.80, navy=0.45, warm=0.30)),
+        grade=dict(exp=-0.10, contrast=0.50, hi=0.50, sat=1.08, red=0.82, blue=1.5, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     "brakes": dict(out="services/brakes",
-        grade=dict(exp=-0.05, contrast=0.30, hi=0.5, sat=0.90, navy=0.5, warm=0.30)),
+        grade=dict(exp=-0.02, contrast=0.50, hi=0.50, sat=1.10, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     "diff": dict(out="services/differentials",
-        grade=dict(exp=-0.30, contrast=0.30, hi=0.9, sat=0.90, white=0.90, navy=0.5, warm=0.30)),
+        grade=dict(exp=-0.25, contrast=0.50, hi=0.90, sat=1.10, white=0.90, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     "body": dict(out="services/bodywork-paint",
-        grade=dict(exp=-0.05, contrast=0.28, sat=0.88, navy=0.5, warm=0.30)),
+        grade=dict(exp=-0.05, contrast=0.45, hi=0.30, sat=1.05, blue=1.4, navy=1.6, warm=1.0, matte=0.7, vig=0.26)),
     "about": dict(out="team/team-1",
         blur=[(186, 548, 306, 642)],   # Virginia licence plate
-        grade=dict(exp=-0.05, contrast=0.28, hi=0.4, sat=0.90, red=0.78, navy=0.45, warm=0.30)),
+        grade=dict(exp=-0.10, contrast=0.50, hi=0.50, sat=1.08, red=0.80, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
 }
 
 
