@@ -21,3 +21,8 @@ removed/oil https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYem
 removed/steering https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_180932_a7daa139-75a7-423c-b164-c225cb478b26.png
 removed/engine https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_180931_0701e79c-c840-477b-bd2e-9bc2d9635636.png
 removed/about https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_182551_401cb4ce-15fa-4920-b021-3bd21ab82a4e.png
+originals/diff2 https://d2ol7oe51mr4n9.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/f89f2a9c-2941-49ef-940c-455bed7a756b_resize.jpg
+originals/transsvc https://d2ol7oe51mr4n9.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/e46dc9ec-c9ff-40c7-95ab-92988ba8a426_resize.jpg
+originals/transrep https://d2ol7oe51mr4n9.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/44cdf67c-bb6b-47f0-aac3-873978a7f853_resize.jpg
+originals/oil2 https://d2ol7oe51mr4n9.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/58ac4f15-a433-4f76-a316-be490272752f_resize.jpg
+originals/about2 https://d2ol7oe51mr4n9.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/055b2e2a-5f7d-4534-b10c-1ed9e0648e46_resize.jpg
