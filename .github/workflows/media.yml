@@ -70,6 +70,7 @@ jobs:
           set -euo pipefail
           grep -v '^#' media/images.txt | while read -r name url; do
             [ -z "${name:-}" ] && continue
+            if [ -f "media/$name.jpg" ]; then echo "skip $name (exists)"; continue; fi
             echo "== $name"
             mkdir -p "media/$(dirname "$name")"
             tmp="/tmp/$(basename "$name").src"
