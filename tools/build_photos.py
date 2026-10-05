@@ -48,16 +48,15 @@ PHOTOS = {
         paste=[(0, 330, 215, 1067), (330, 1000, 580, 1067), (1150, 790, 1420, 905)],
         blur=[(186, 548, 306, 642)],   # Virginia licence plate
         grade=dict(exp=-0.10, contrast=0.50, hi=0.50, sat=1.08, red=0.80, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
-    # AI / supplied stills (sources in media/ai-src, not deployed). Darker, desaturated theme grade.
-    "electrical-battery": dict(src="ai-src/electrical-battery-v1", out="services/electrical-battery", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
-    "ac-heating": dict(src="ai-src/ac-heating-v1", out="services/ac-heating", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
-    "belts-hoses-cooling": dict(src="ai-src/belts-hoses-cooling-v3", out="services/belts-hoses-cooling",
-        grade=dict(exp=-0.15, contrast=0.40, hi=0.50, sat=0.95, blue=1.1, navy=1.2, warm=0.8, matte=0.5, vig=0.30)),
+    # AI / Pexels stills (sources in media/ai-src and media/stock, not deployed; Pexels licence: free commercial use). Darker, desaturated theme grade.
+    "electrical-battery": dict(src="stock/px-4374843", out="services/electrical-battery", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
+    "ac-heating": dict(src="stock/px-13302056", out="services/ac-heating", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
+    "belts-hoses-cooling": dict(src="stock/px-12765663", out="services/belts-hoses-cooling", grade=dict(exp=-0.20, contrast=0.45, hi=0.50, sat=0.90, red=0.85, blue=1.3, navy=1.5, warm=1.1, matte=0.4, vig=0.30)),
     "engine-replacement": dict(src="ai-src/engine-replacement-v1", out="services/engine-replacement", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
     "transmission-replacement": dict(src="ai-src/transmission-gears", out="services/transmission-replacement",
         grade=dict(exp=-0.20, contrast=0.60, hi=0.50, sat=1.0, blue=1.2, navy=1.5, warm=1.4, matte=0.3, vig=0.30)),
-    "collision-repair": dict(src="ai-src/collision-repair-v1", out="services/collision-repair", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
-    "detailing": dict(src="ai-src/detailing-v1", out="services/detailing", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
+    "collision-repair": dict(src="stock/px-6870314", out="services/collision-repair", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
+    "detailing": dict(src="stock/px-9784193", out="services/detailing", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
     "undercoating": dict(src="ai-src/undercoating-v1", out="services/undercoating", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
 }
 
@@ -105,6 +104,14 @@ def main(names):
     for n in names or PHOTOS:
         cfg = PHOTOS[n]
         orig = Image.open(f"{ROOT}/media/{cfg.get('src', 'originals/' + n)}.jpg").convert("RGB")
+        if cfg.get("src"):  # stock / AI sources: centre-crop to 3:2, max 1600 wide
+            w, h = orig.size
+            if w / h > 1.5:
+                nw = int(h * 1.5); orig = orig.crop(((w - nw) // 2, 0, (w - nw) // 2 + nw, h))
+            else:
+                nh = int(w / 1.5); orig = orig.crop((0, (h - nh) // 2, w, (h - nh) // 2 + nh))
+            if orig.width > 1600:
+                orig = orig.resize((1600, round(1600 / 1.5)), Image.LANCZOS)
         if cfg.get("paste"):
             orig = paste_back(orig, Image.open(f"{ROOT}/media/removed/{n}.jpg").convert("RGB"), cfg["paste"])
         if cfg.get("blur"):
