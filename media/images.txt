@@ -20,3 +20,4 @@ removed/tires https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vY
 removed/oil https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_180931_64824ab3-01fe-4df1-a219-5f3a79a5683f.png
 removed/steering https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_180932_a7daa139-75a7-423c-b164-c225cb478b26.png
 removed/engine https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_180931_0701e79c-c840-477b-bd2e-9bc2d9635636.png
+removed/about https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_182551_401cb4ce-15fa-4920-b021-3bd21ab82a4e.png
