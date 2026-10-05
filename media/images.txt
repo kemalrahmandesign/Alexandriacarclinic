@@ -45,3 +45,15 @@ ai-src/detailing-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPb
 ai-src/ac-heating-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_200300_b7233ed5-4348-4bad-a0cf-8e85cb61d96d.png
 ai-src/engine-replacement-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_200259_0f9b9576-adc3-42ff-96c2-09c1da067bf0.png
 ai-src/collision-repair-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_200258_31950e54-45be-4ece-b354-1d27e96f1e0a.png
+staging/px-4374843 https://images.pexels.com/photos/4374843/pexels-photo-4374843.jpeg?auto=compress&cs=tinysrgb&w=2000
+staging/px-9784193 https://images.pexels.com/photos/9784193/pexels-photo-9784193.jpeg?auto=compress&cs=tinysrgb&w=2000
+staging/px-11079820 https://images.pexels.com/photos/11079820/pexels-photo-11079820.jpeg?auto=compress&cs=tinysrgb&w=2000
+staging/px-6873177 https://images.pexels.com/photos/6873177/pexels-photo-6873177.jpeg?auto=compress&cs=tinysrgb&w=2000
+staging/px-12765663 https://images.pexels.com/photos/12765663/pexels-photo-12765663.jpeg?auto=compress&cs=tinysrgb&w=2000
+staging/px-13302056 https://images.pexels.com/photos/13302056/pexels-photo-13302056.jpeg?auto=compress&cs=tinysrgb&w=2000
+staging/px-6517339 https://images.pexels.com/photos/6517339/pexels-photo-6517339.jpeg?auto=compress&cs=tinysrgb&w=2000
+staging/px-6870314 https://images.pexels.com/photos/6870314/pexels-photo-6870314.jpeg?auto=compress&cs=tinysrgb&w=2000
+staging/px-3894030 https://images.pexels.com/photos/3894030/pexels-photo-3894030.jpeg?auto=compress&cs=tinysrgb&w=2000
+staging/px-8478233 https://images.pexels.com/photos/8478233/pexels-photo-8478233.jpeg?auto=compress&cs=tinysrgb&w=2000
+staging/px-8986047 https://images.pexels.com/photos/8986047/pexels-photo-8986047.jpeg?auto=compress&cs=tinysrgb&w=2000
+staging/px-20094998 https://images.pexels.com/photos/20094998/pexels-photo-20094998.jpeg?auto=compress&cs=tinysrgb&w=2000
