@@ -1163,12 +1163,12 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 
 .team {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--element-gap);
   margin-top: clamp(56px, 7vw, 104px);
 }
 
-.team .photo { aspect-ratio: 4 / 5; }
+.team .photo { aspect-ratio: 3 / 2; max-height: 86svh; width: 100%; }
 
 /* ---------- Contact ---------- */
 .visit__note {
@@ -1198,7 +1198,6 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
   .svc-panel .svc-stage__desc { max-width: none; }
   .cars__cols, .about__cols { grid-template-columns: 1fr; }
   .about__second { margin-top: 0; }
-  .team { grid-template-columns: 1fr 1fr; }
   .review-card { width: 86vw; left: 7vw !important; right: auto !important; }
   .review-card--1 { top: 16%; }
   .review-card--2 { top: 30%; }

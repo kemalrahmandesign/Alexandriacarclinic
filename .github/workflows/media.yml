@@ -67,8 +67,8 @@ jobs:
             [ -z "${name:-}" ] && continue
             echo "== $name"
             curl -fsSL "$url" -o "/tmp/$name.src"
-            # posters only show before a film decodes: 1280 JPEG is plenty
-            ffmpeg -nostdin -y -i "/tmp/$name.src" -vf scale=1280:-1 -q:v 4 "media/$name.jpg"
+            # posters and photos: max 1600 wide JPEG
+            ffmpeg -nostdin -y -i "/tmp/$name.src" -vf "scale='min(1600,iw)':-1" -q:v 3 "media/$name.jpg"
           done
           ls -la media
 
