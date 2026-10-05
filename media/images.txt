@@ -39,3 +39,9 @@ ai-src/detailing-v1 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPb
 ai-src/undercoating-v1 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_190005_f5282006-3e11-4ea7-b3d6-5ee7f0baf6c3.png
 staging/belts-hoses-cooling-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_191003_2e96972e-a9e2-42d8-a422-68dc7058fdb1.png
 ai-src/belts-hoses-cooling-v3 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_191747_0655d236-bc73-4bf8-ac35-11d325c3a2a4.png
+ai-src/electrical-battery-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_200259_e17f2845-6e56-47ec-a4f7-c779955a3f7c.png
+ai-src/undercoating-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_200258_9a51d347-f87e-4847-b513-d5c9466ceab6.png
+ai-src/detailing-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_200258_3cb5b6ef-380f-46cb-b3b4-b0bbe097a327.png
+ai-src/ac-heating-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_200300_b7233ed5-4348-4bad-a0cf-8e85cb61d96d.png
+ai-src/engine-replacement-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_200259_0f9b9576-adc3-42ff-96c2-09c1da067bf0.png
+ai-src/collision-repair-v2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_200258_31950e54-45be-4ece-b354-1d27e96f1e0a.png
