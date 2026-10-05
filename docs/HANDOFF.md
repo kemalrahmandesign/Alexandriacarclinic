@@ -16,14 +16,14 @@ Site is built and deployed as a preview. Hero film, lift film, services index, r
 | differentials | done (real) | originals/diff2 (Mazda underside, plate blurred) |
 | bodywork-paint | done (real) | originals/body (hand with sander, NO person, leave it) |
 | team/team-1 (About) | done (real) | originals/oil2 (two men by oil drums) |
-| electrical-battery | done (AI, graded) | ai-src/<slug>-v1 via build_photos.py |
-| ac-heating | done (AI, graded) | ai-src/<slug>-v1 via build_photos.py |
-| belts-hoses-cooling | done (AI v3, clean look, graded) | ai-src/belts-hoses-cooling-v3 |
-| engine-replacement | done (AI, graded) | ai-src/<slug>-v1 via build_photos.py |
+| electrical-battery | done (Pexels 4374843, cropped to hide text, graded) | stock/px-4374843 |
+| ac-heating | done (Pexels 13302056, graded) | stock/px-13302056 |
+| belts-hoses-cooling | done (Pexels 12765663 BMW M engine, graded; shows M badge) | stock/px-12765663 |
+| engine-replacement | done (AI v2, clean look; user finds AI fake, replace with real if found) | ai-src/engine-replacement-v2 |
 | transmission-replacement | done (supplied gears photo, graded; confirm licence) | ai-src/transmission-gears |
-| collision-repair | done (AI, graded) | ai-src/<slug>-v1 via build_photos.py |
-| detailing | done (AI, graded) | ai-src/<slug>-v1 via build_photos.py |
-| undercoating | done (AI, graded) | ai-src/<slug>-v1 via build_photos.py |
+| collision-repair | done (Pexels 6870314 spray gun, graded dark) | stock/px-6870314 |
+| detailing | done (Pexels 9784193 red supercar headlight, graded) | stock/px-9784193 |
+| undercoating | done (AI v2 spray macro; replace with real if found) | ai-src/undercoating-v2 |
 
 ## The photo problem (read this)
 Two looks exist and the user dislikes both as they stand:
@@ -38,6 +38,9 @@ Two looks exist and the user dislikes both as they stand:
 Decision from the user: **fill missing services with generated shots in the intense, grimy, cinematic look**, and
 (their call) possibly move the existing real photos to that same look so the set is consistent. Ask which for the
 existing 9 only if unclear; do not ask about the missing 8, just generate.
+
+## Photo sourcing (Oct 5)
+User prefers REAL photos (Pexels/Unsplash, free commercial licence) over gpt_image_2_5, which reads as fake/video-game. Spare: stock/px-6873177 (water beads on white car).
 
 ## Prompt lesson (Oct 5)
 Do NOT use "gritty/grimy/grease/oil-stained" in prompts: gpt_image_2_5 makes it a dumpster. The shop brand is clean, premium,
