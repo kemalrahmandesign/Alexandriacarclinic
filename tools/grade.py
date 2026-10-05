@@ -11,6 +11,7 @@ keys (all optional):
   navy     navy lean in shadows (0..1)        default 0.5
   warm     warm tint in highlights (0..1)     default 0.35
   vig      vignette strength (0..1)           default 0.15
+  white    white point (0.8..1) pulls blown backgrounds down  default 1
 """
 import sys
 import numpy as np
@@ -23,13 +24,14 @@ def smooth_s(x, k):
     return x * (1 - k) + s * k
 
 
-def grade(img, exp=0.0, contrast=0.25, hi=0.0, sat=0.9, red=1.0, navy=0.5, warm=0.35, vig=0.15):
+def grade(img, exp=0.0, contrast=0.25, hi=0.0, sat=0.9, red=1.0, navy=0.5, warm=0.35, vig=0.15, white=1.0):
     a = np.asarray(img.convert("RGB"), dtype=np.float32) / 255.0
     a = np.clip(a * (2.0 ** exp), 0, 1)
     if hi > 0:  # roll off highlights
         t = 0.62
         over = np.clip(a - t, 0, None)
         a = np.where(a > t, t + (1 - t) * (1 - np.exp(-over / (1 - t) * (1 + 2 * hi))) / (1 - np.exp(-(1 + 2 * hi))) , a)
+    a = a * white
     a = smooth_s(a, contrast)
     lum = (0.299 * a[..., 0] + 0.587 * a[..., 1] + 0.114 * a[..., 2])[..., None]
     a = lum + (a - lum) * sat

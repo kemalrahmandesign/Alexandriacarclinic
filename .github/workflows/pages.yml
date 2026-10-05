@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir _site
           cp -r index.html robots.txt sitemap.xml css js fonts media _site/
-          rm -rf _site/media/qa
+          rm -rf _site/media/qa _site/media/originals _site/media/removed _site/media/spare _site/media/staging
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
