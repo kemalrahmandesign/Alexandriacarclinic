@@ -67,7 +67,7 @@ dust, oil stains, film grain, no text, no logos, no license plates, no people."
 ## After photos
 1. **Form setup**: `data-endpoint=""` on the booking form in `index.html`. Pick a form service (Formspree, Web3Forms,
    or Cloudflare Pages Function) that forwards to Zack's regular email (ask the user for it). `js/motion.js` already POSTs JSON
-   `{name, phone, email, vehicle, services[], message}` to the endpoint if set.
+   the form fields plus `services` (comma-joined chip labels) to the endpoint if set.
 2. **SEO**: unique `<title>`/meta description, canonical, OG/Twitter image, JSON-LD `AutoRepair` (name, address, phone,
    hours Mon-Fri 8-6, Sat 9-3, Sun closed, areaServed, `makesOffer` for each service, `priceRange`),
    `sitemap.xml`, `robots.txt`, descriptive alt text, headline with "BMW Mercedes European repair Alexandria VA".
