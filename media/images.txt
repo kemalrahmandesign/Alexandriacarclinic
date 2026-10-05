@@ -29,3 +29,11 @@ originals/about2 https://d2ol7oe51mr4n9.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOw
 removed/transsvc https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_183545_2d17f56b-a271-40d5-afc4-053e2a5a38e3.png
 removed/transrep https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_183545_b1ed23d6-162a-4859-81b0-58addf2e860a.png
 removed/oil2 https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_183934_77ccab4e-8e91-49f8-a864-3499dc2f6e33.png
+services/electrical-battery https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_190005_a0983997-eec8-4b57-9f48-4f7c73b94a92.png
+services/ac-heating https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_190004_5d905aa1-5267-469f-aa42-87f5aba711b8.png
+services/belts-hoses-cooling https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_190004_4c2b9828-d8e8-44ea-82a7-ed647c3e92c6.png
+services/engine-replacement https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_190005_0c5dcaf9-03e1-4719-abbe-034eaffc7280.png
+services/transmission-replacement https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_190003_8fd2492a-5b4d-46b2-8dba-38a97fb5449a.png
+services/collision-repair https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_190004_994a91bc-a9e9-44b3-9e38-e925a95601a5.png
+services/detailing https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_190003_02174748-0fdf-41a0-8c67-809eaf525ff7.png
+services/undercoating https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_190005_f5282006-3e11-4ea7-b3d6-5ee7f0baf6c3.png
