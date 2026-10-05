@@ -74,7 +74,7 @@ jobs:
             echo "== $name"
             mkdir -p "media/$(dirname "$name")"
             tmp="/tmp/$(basename "$name").src"
-            curl -fsSL "$url" -o "$tmp"
+            curl -fsSL "$url" -o "$tmp" || { echo "FAILED download: $name"; continue; }
             # posters and photos: max 1600 wide JPEG
             ffmpeg -nostdin -y -i "$tmp" -vf "scale='min(1600,iw)':-1" -q:v 3 "media/$name.jpg"
           done
