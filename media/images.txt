@@ -16,3 +16,7 @@ originals/oil https://d2ol7oe51mr4n9.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7v
 originals/body https://d2ol7oe51mr4n9.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/e3b2787f-3e04-4b0f-ade9-3488b2cb21ac_resize.jpg
 originals/about https://d2ol7oe51mr4n9.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/e6e2ba9e-b417-4adc-acb5-fab5f9a5f0f3_resize.jpg
 originals/engine https://d2ol7oe51mr4n9.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/c6113c4a-85b5-493a-9d27-56ec18f39801_resize.jpg
+removed/tires https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_180930_0128188a-bef1-482b-93f5-2e87f6fd1285.png
+removed/oil https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_180931_64824ab3-01fe-4df1-a219-5f3a79a5683f.png
+removed/steering https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_180932_a7daa139-75a7-423c-b164-c225cb478b26.png
+removed/engine https://d8j0ntlcm91z4.cloudfront.net/user_3FE0Xjh16Sot9aoCPbOwO7vYemS/hf_20261005_180931_0701e79c-c840-477b-bd2e-9bc2d9635636.png
