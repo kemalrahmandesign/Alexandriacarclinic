@@ -16,14 +16,14 @@ Site is built and deployed as a preview. Hero film, lift film, services index, r
 | differentials | done (real) | originals/diff2 (Mazda underside, plate blurred) |
 | bodywork-paint | done (real) | originals/body (hand with sander, NO person, leave it) |
 | team/team-1 (About) | done (real) | originals/oil2 (two men by oil drums) |
-| electrical-battery | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
-| ac-heating | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
-| belts-hoses-cooling | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
-| engine-replacement | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
-| transmission-replacement | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
-| collision-repair | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
-| detailing | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
-| undercoating | done (AI, gpt_image_2_5 2K high, Oct 5) | generated |
+| electrical-battery | done (AI, graded) | ai-src/<slug>-v1 via build_photos.py |
+| ac-heating | done (AI, graded) | ai-src/<slug>-v1 via build_photos.py |
+| belts-hoses-cooling | done (AI v3, clean look, graded) | ai-src/belts-hoses-cooling-v3 |
+| engine-replacement | done (AI, graded) | ai-src/<slug>-v1 via build_photos.py |
+| transmission-replacement | done (supplied gears photo, graded; confirm licence) | ai-src/transmission-gears |
+| collision-repair | done (AI, graded) | ai-src/<slug>-v1 via build_photos.py |
+| detailing | done (AI, graded) | ai-src/<slug>-v1 via build_photos.py |
+| undercoating | done (AI, graded) | ai-src/<slug>-v1 via build_photos.py |
 
 ## The photo problem (read this)
 Two looks exist and the user dislikes both as they stand:
@@ -38,6 +38,13 @@ Two looks exist and the user dislikes both as they stand:
 Decision from the user: **fill missing services with generated shots in the intense, grimy, cinematic look**, and
 (their call) possibly move the existing real photos to that same look so the set is consistent. Ask which for the
 existing 9 only if unclear; do not ask about the missing 8, just generate.
+
+## Prompt lesson (Oct 5)
+Do NOT use "gritty/grimy/grease/oil-stained" in prompts: gpt_image_2_5 makes it a dumpster. The shop brand is clean, premium,
+professional. The winning prompt is belts-hoses-cooling-v3 (tight close-up, gloss navy bay, warm brass flare upper left, shallow DOF,
+"no dirt, no text"). The v1 AI shots (electrical, ac, engine-replacement, collision, detailing, undercoating) are still grimy under the
+grade; redo them with the v3 prompt style, ONE test first, only with the user's OK.
+Always test ONE image before a batch.
 
 ## Rules the user set (do not break)
 - **Credits are tight** (~410 left). One attempt per image, get it right first time. No low-res tests; 2K max. Use
