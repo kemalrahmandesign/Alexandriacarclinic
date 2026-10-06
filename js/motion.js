@@ -135,6 +135,19 @@
   var heroCue = document.querySelector('[data-hero-cue]');
   var navWordmark = document.querySelector('.nav__wordmark');
   var reviewCards = document.querySelectorAll('[data-review-card]');
+  // all review cards share one height so a stacked card never pokes
+  // out from under the newer card on top of it
+  function sizeReviewCards() {
+    var max = 0;
+    reviewCards.forEach(function (c) { c.style.minHeight = ''; });
+    reviewCards.forEach(function (c) { max = Math.max(max, c.offsetHeight); });
+    reviewCards.forEach(function (c) { c.style.minHeight = max + 'px'; });
+  }
+  if (reviewCards.length) {
+    sizeReviewCards();
+    window.addEventListener('resize', sizeReviewCards);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeReviewCards);
+  }
   var liftHint = document.querySelector('[data-lift-hint]');
   var bookPill = document.querySelector('[data-book-pill]');
 
@@ -214,32 +227,32 @@
 
     lift: function (pin, p) {
       // The lift film runs (reversed) underneath while five-star
-      // reviews pop up over it as glass cards. Larger screens show them
-      // in left/right pairs; phones only fit two slots, so each card
-      // holds its slot for a beat and hands off to the next.
+      // reviews pop up over it as glass cards, stacking up as you scroll.
       scrubVideo(pin, p);
       if (pin.caption) pin.caption.classList.toggle('is-on', p > 0.06 && p < 0.9);
       if (liftHint) {
         liftHint.style.opacity = String(fade(p, 0.08, 0.16) * (1 - fade(p, 0.32, 0.42)) * 0.9);
       }
+      // Cards build up in two stacks (odd cards left/top, even cards
+      // right/bottom). Once a card is in it stays: each newer card lands
+      // on top and the older ones step back behind it, still visible.
       var n = reviewCards.length;
-      var slot = 0.66 / n;
-      var phones = window.innerWidth <= 640;
-      // larger screens: cards come in pairs (left + right), each pair
-      // holds for a beat then hands off; the last pair stays up
       var pairs = Math.ceil(n / 2);
       var pslot = 0.72 / pairs;
+      var on = [];
       reviewCards.forEach(function (card, i) {
-        var on;
-        if (phones) {
-          var at = 0.14 + i * slot;
-          on = p > at && p < at + slot * 1.9;
-        } else {
-          var k = Math.floor(i / 2);
-          var pat = 0.12 + k * pslot + (i % 2) * pslot * 0.12;
-          on = p > pat && (k === pairs - 1 || p < 0.12 + (k + 1) * pslot);
-        }
-        card.classList.toggle('is-on', on);
+        var at = 0.12 + Math.floor(i / 2) * pslot + (i % 2) * pslot * 0.15;
+        on[i] = p > at;
+      });
+      reviewCards.forEach(function (card, i) {
+        card.classList.toggle('is-on', on[i]);
+        card.style.zIndex = String(10 + i);
+        if (!on[i]) { card.style.transform = ''; card.style.opacity = ''; return; }
+        var depth = 0;
+        for (var j = i + 2; j < n; j += 2) if (on[j]) depth++;
+        var step = window.innerWidth <= 640 ? 14 : 30;
+        card.style.transform = depth ? 'translateY(' + (-step * depth) + 'px) scale(' + (1 - 0.04 * depth) + ')' : '';
+        card.style.opacity = depth ? String(Math.max(0.55, 1 - 0.2 * depth)) : '';
       });
       // flash guard: settle to the canvas colour at the very end
       if (pin.fadeEl) {
