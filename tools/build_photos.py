@@ -35,7 +35,7 @@ PHOTOS = {
     "diff2": dict(out="services/differentials",
         box=(0, 207, 1290, 1067),   # crop the Virginia licence plate out of frame (was an ugly blur box)
         grade=dict(exp=-0.10, contrast=0.50, hi=0.50, sat=1.08, red=0.80, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
-    "transsvc": dict(out="services/transmission-service",
+    "transsvc": dict(out="team/team-2",
         paste=[(0, 840, 520, 1067), (60, 640, 500, 900), (1330, 500, 1560, 660), (1380, 360, 1540, 520)],
         grade=dict(exp=-0.12, contrast=0.50, hi=0.50, sat=1.10, blue=1.5, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     "transrep": dict(out="services/oil-change",
@@ -44,6 +44,7 @@ PHOTOS = {
     "oil2": dict(out="team/team-1",
         paste=[(0, 220, 130, 625), (150, 985, 540, 1067)],
         grade=dict(exp=-0.15, contrast=0.50, hi=0.60, sat=1.10, white=0.95, blue=1.5, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
+    "oil": dict(out="team/team-3", grade=dict(exp=-0.12, contrast=0.50, hi=0.60, sat=1.10, white=0.92, blue=1.5, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     "about": dict(out="spare/about-mazda",
         paste=[(0, 330, 215, 1067), (330, 1000, 580, 1067), (1150, 790, 1420, 905)],
         blur=[(186, 548, 306, 642)],   # Virginia licence plate

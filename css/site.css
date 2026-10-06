@@ -1163,12 +1163,15 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 
 .team {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--element-gap);
   margin-top: clamp(56px, 7vw, 104px);
 }
 
-.team .photo { aspect-ratio: 3 / 2; max-height: 86svh; width: 100%; }
+.team .photo { aspect-ratio: 4 / 5; width: 100%; margin: 0; }
+.team .photo:nth-child(1) img { object-position: 38% 50%; }
+.team .photo:nth-child(2) img { object-position: 42% 50%; }
+.team .photo:nth-child(3) img { object-position: 74% 50%; }
 
 /* ---------- Contact ---------- */
 .visit__note {
@@ -1378,15 +1381,15 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 .svc-stage__desc { font-size: 17px; }
 .svc-actions .btn-pill { padding: 20px 34px; font-size: 16px; }
 
-@media (min-width: 901px) { .review-card { width: min(640px, 45vw); padding: 40px; } }
-.review-card__stars { font-size: 19px; margin-bottom: var(--spacing-18); }
-.review-card__quote { font-size: clamp(20px, 2vw, 30px); line-height: 1.3; margin-bottom: var(--spacing-18); }
-.review-card__meta { font-size: 14px; }
+@media (min-width: 901px) { .review-card { width: clamp(360px, 31vw, 620px); padding: clamp(24px, 2vw, 40px); } }
+.review-card__stars { font-size: clamp(14px, 0.95vw, 19px); margin-bottom: var(--spacing-14); }
+.review-card__quote { font-size: clamp(17px, 1.3vw, 27px); line-height: 1.32; margin-bottom: var(--spacing-14); }
+.review-card__meta { font-size: clamp(11px, 0.75vw, 14px); }
 /* reviews: two stacks that meet near the centre (see JS); newest card on top */
 .review-card { background: rgba(5, 11, 22, 0.8); }
 @media (min-width: 901px) {
-  .review-card--1, .review-card--3, .review-card--5 { top: 30%; left: auto; right: 50.8vw; }
-  .review-card--2, .review-card--4, .review-card--6 { top: 40%; right: auto; left: 50.8vw; }
+  .review-card--1, .review-card--3, .review-card--5 { top: 30%; left: 9vw; right: auto; }
+  .review-card--2, .review-card--4, .review-card--6 { top: 42%; right: 9vw; left: auto; }
 }
 @media (min-width: 641px) and (max-width: 900px) {
   .review-card--1, .review-card--3, .review-card--5 { top: 22%; }
@@ -1448,3 +1451,6 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 .field .msel__opt input { width: 20px; height: 20px; padding: 0; border: 1px solid var(--color-ivory); border-radius: 4px; }
 /* phones have no backdrop blur, so stacked cards need a near-solid fill */
 @media (max-width: 900px) { .review-card { background: rgb(7, 14, 28); } }
+/* equal-height review cards: centre the quote vertically */
+.review-card { display: flex; flex-direction: column; justify-content: center; }
+@media (max-width: 640px) { .team .photo { aspect-ratio: 3 / 2; } }

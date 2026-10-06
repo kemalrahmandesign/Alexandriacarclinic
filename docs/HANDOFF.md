@@ -15,7 +15,7 @@ Site is built and deployed as a preview. Hero film, lift film, services index, r
 | transmission-service | done (real) | originals/transsvc (impact gun mechanic) |
 | differentials | done (real; plate now cropped out instead of blurred) | originals/diff2 |
 | bodywork-paint | done (Pexels 6870314 spray gun, graded dark) | stock/px-6870314 |
-| team/team-1 (About) | done (real) | originals/oil2 (two men by oil drums) |
+| team/team-1..3 (About, 3-up) | done (real) | originals/oil2, transsvc, oil |
 | electrical-battery | done (Pexels 4374843, cropped to hide text, graded) | stock/px-4374843 |
 | ac-heating | done (Pexels 11291690 luxury dash vents/climate, graded) | stock/px-11291690 |
 | belts-hoses-cooling | done (Pexels 3757226 timing belt/pulleys, graded) | stock/px-3757226 |
