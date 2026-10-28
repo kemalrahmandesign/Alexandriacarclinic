@@ -27,7 +27,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir _site
-          cp -r index.html robots.txt sitemap.xml css js fonts media _site/
+          cp -r index.html 404.html robots.txt sitemap.xml css js fonts media _site/
           rm -rf _site/media/qa _site/media/originals _site/media/removed _site/media/spare _site/media/staging _site/media/ai-v1 _site/media/ai-src _site/media/stock _site/media/incoming
 
       - name: Configure Pages
