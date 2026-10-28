@@ -25,12 +25,12 @@ PHOTOS = {
     "steering": dict(out="services/steering-suspension",
         paste=[(150, 540, 575, 1067), (0, 790, 150, 1067)],
         grade=dict(exp=-0.12, contrast=0.50, hi=0.30, sat=1.10, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
-    "engine": dict(out="services/engine-diagnostics",
+    "engine": dict(out="spare/engine-diagnostics-mazda",
         paste=[(185, 955, 465, 1067), (640, 995, 745, 1055), (160, 870, 270, 935), (800, 985, 905, 1035)],
         grade=dict(exp=-0.10, contrast=0.50, hi=0.50, sat=1.08, red=0.82, blue=1.5, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     "brakes": dict(out="services/brakes",
         grade=dict(exp=-0.02, contrast=0.50, hi=0.50, sat=1.10, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
-    "body": dict(out="services/collision-repair",
+    "body": dict(out="services/bodywork-paint",
         grade=dict(exp=-0.05, contrast=0.45, hi=0.30, sat=1.05, blue=1.4, navy=1.6, warm=1.0, matte=0.7, vig=0.26)),
     "diff2": dict(out="services/differentials",
         box=(0, 207, 1290, 1067),   # crop the Virginia licence plate out of frame (was an ugly blur box)
@@ -44,21 +44,23 @@ PHOTOS = {
     "oil2": dict(out="team/team-1",
         paste=[(0, 220, 130, 625), (150, 985, 540, 1067)],
         grade=dict(exp=-0.15, contrast=0.50, hi=0.60, sat=1.10, white=0.95, blue=1.5, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
-    "oil": dict(out="team/team-3", grade=dict(exp=-0.12, contrast=0.50, hi=0.60, sat=1.10, white=0.92, blue=1.5, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
+    "oil": dict(out="spare/team-under-car", grade=dict(exp=-0.12, contrast=0.50, hi=0.60, sat=1.10, white=0.92, blue=1.5, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     "about": dict(out="spare/about-mazda",
         paste=[(0, 330, 215, 1067), (330, 1000, 580, 1067), (1150, 790, 1420, 905)],
         blur=[(186, 548, 306, 642)],   # Virginia licence plate
         grade=dict(exp=-0.10, contrast=0.50, hi=0.50, sat=1.08, red=0.80, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     # AI / Pexels stills (sources in media/ai-src and media/stock, not deployed; Pexels licence: free commercial use). Darker, desaturated theme grade.
-    "electrical-battery": dict(src="stock/px-4374843", box=(600, 800, 1600, 1467), out="services/electrical-battery", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
-    "ac-heating": dict(src="stock/px-11291690", out="services/ac-heating", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
-    "belts-hoses-cooling": dict(src="stock/px-3757226", out="services/belts-hoses-cooling", grade=dict(exp=-0.20, contrast=0.45, hi=0.50, sat=0.90, red=0.85, blue=1.3, navy=1.5, warm=1.1, matte=0.4, vig=0.30)),
-    "engine-replacement": dict(src="stock/px-5158155", out="services/engine-replacement", grade=dict(exp=-0.20, contrast=0.45, hi=0.50, sat=0.90, red=0.85, blue=1.3, navy=1.5, warm=1.1, matte=0.4, vig=0.30)),
-    "transmission-replacement": dict(src="ai-src/transmission-gears", out="services/transmission-replacement",
-        grade=dict(exp=-0.20, contrast=0.60, hi=0.50, sat=1.0, blue=1.2, navy=1.5, warm=1.4, matte=0.3, vig=0.30)),
-    "bodywork-paint": dict(src="stock/px-6870314", out="services/bodywork-paint", grade=dict(exp=-0.55, contrast=0.55, hi=0.70, sat=0.85, blue=1.4, navy=1.7, warm=1.0, matte=0.4, white=0.85, vig=0.40)),
-    "detailing": dict(src="stock/px-9784193", out="services/detailing", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
     "undercoating": dict(src="ai-src/undercoating-v2", out="services/undercoating", grade=dict(exp=-0.05, contrast=0.42, hi=0.45, sat=0.88, red=0.80, blue=1.3, navy=1.5, warm=1.0, matte=0.35, vig=0.30)),
+    # real shop photos uploaded Oct 28 (media/incoming, not deployed)
+    "DSC07517": dict(src="incoming/DSC07517", out="services/engine-diagnostics", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07521": dict(src="incoming/DSC07521", out="services/electrical-battery", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07425": dict(src="incoming/DSC07425", out="services/ac-heating", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07524": dict(src="incoming/DSC07524", out="services/belts-hoses-cooling", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07288": dict(src="incoming/DSC07288", out="services/transmission-replacement", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07337": dict(src="incoming/DSC07337", out="services/collision-repair", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07414": dict(src="incoming/DSC07414", out="services/detailing", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07370": dict(src="incoming/DSC07370", out="services/engine-replacement", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07450": dict(src="incoming/DSC07450", out="team/team-3", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
 }
 
 
@@ -104,7 +106,8 @@ def blur_boxes(img, boxes, r=22):
 def main(names):
     for n in names or PHOTOS:
         cfg = PHOTOS[n]
-        orig = Image.open(f"{ROOT}/media/{cfg.get('src', 'originals/' + n)}.jpg").convert("RGB")
+        base = f"{ROOT}/media/{cfg.get('src', 'originals/' + n)}"
+        orig = Image.open(base + ".jpg" if os.path.exists(base + ".jpg") else base + ".JPG").convert("RGB")
         if cfg.get("box"):  # pre-crop (e.g. to cut out readable text)
             orig = orig.crop(cfg["box"])
         if cfg.get("src"):  # stock / AI sources: centre-crop to 3:2, max 1600 wide

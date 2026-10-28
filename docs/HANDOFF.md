@@ -9,20 +9,20 @@ Site is built and deployed as a preview. Hero film, lift film, services index, r
 |---|---|---|
 | oil-change | done (real) | originals/transrep (oil drain pan) |
 | brakes | done (real) | originals/brakes |
-| engine-diagnostics | done (real) | originals/engine |
+| engine-diagnostics | done (real, Oct 28: DSC07517 diagnostic tablet in Bentley) | incoming/DSC07517 |
 | steering-suspension | done (real) | originals/steering |
 | tires-alignment | done (real) | originals/tires |
 | transmission-service | done (real) | originals/transsvc (impact gun mechanic) |
 | differentials | done (real; plate now cropped out instead of blurred) | originals/diff2 |
-| bodywork-paint | done (Pexels 6870314 spray gun, graded dark) | stock/px-6870314 |
+| bodywork-paint | done (real: originals/body sander, back where it started) | originals/body |
 | team/team-1..3 (About, 3-up) | done (real) | originals/oil2, transsvc, oil |
-| electrical-battery | done (Pexels 4374843, cropped to hide text, graded) | stock/px-4374843 |
-| ac-heating | done (Pexels 11291690 luxury dash vents/climate, graded) | stock/px-11291690 |
-| belts-hoses-cooling | done (Pexels 3757226 timing belt/pulleys, graded) | stock/px-3757226 |
-| engine-replacement | done (Pexels 5158155 polished engine detail, graded) | stock/px-5158155 |
-| transmission-replacement | merged into "Transmission service & replacement" (uses the gears photo) | ai-src/transmission-gears |
-| collision-repair | done (real: originals/body sander shot, moved here from bodywork) | originals/body |
-| detailing | done (Pexels 9784193 red supercar headlight, graded) | stock/px-9784193 |
+| electrical-battery | done (real: DSC07521 battery) | incoming/DSC07521 |
+| ac-heating | done (real: DSC07425 Bentley vent) | incoming/DSC07425 |
+| belts-hoses-cooling | done (real: DSC07524 hoses) | incoming/DSC07524 |
+| engine-replacement | done (real: DSC07370 engine bay mid-job) | incoming/DSC07370 |
+| transmission-replacement | Transmission service & replacement row uses real DSC07288 (pulled transaxle) | incoming/DSC07288 |
+| collision-repair | done (real: DSC07337 damaged quarter panel) | incoming/DSC07337 |
+| detailing | done (real: DSC07414 Bentley headlight) | incoming/DSC07414 |
 | undercoating | done (AI v2 spray macro; replace with real if found) | ai-src/undercoating-v2 |
 
 ## The photo problem (read this)
@@ -38,6 +38,10 @@ Two looks exist and the user dislikes both as they stand:
 Decision from the user: **fill missing services with generated shots in the intense, grimy, cinematic look**, and
 (their call) possibly move the existing real photos to that same look so the set is consistent. Ask which for the
 existing 9 only if unclear; do not ask about the missing 8, just generate.
+
+## Shop photos (Oct 28)
+13 real photos in media/incoming (Sony DSC07xxx). Unused spares: DSC07386 (BMW engine cover), DSC07459 (Aston, hood up),
+DSC07463 (Aston plaque), DSC07468 (Aston dash warning lights). Team-3 is DSC07450. Still stock/AI: undercoating.
 
 ## Copy direction (Oct 5)
 Specialists in every make and model, with real depth on European and luxury cars. Do NOT lead with BMW/Mercedes.

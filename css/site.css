@@ -1171,7 +1171,7 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 .team .photo { aspect-ratio: 4 / 5; width: 100%; margin: 0; }
 .team .photo:nth-child(1) img { object-position: 38% 50%; }
 .team .photo:nth-child(2) img { object-position: 42% 50%; }
-.team .photo:nth-child(3) img { object-position: 74% 50%; }
+.team .photo:nth-child(3) img { object-position: 24% 50%; }
 
 /* ---------- Contact ---------- */
 .visit__note {
