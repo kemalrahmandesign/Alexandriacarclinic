@@ -12,6 +12,7 @@
   <meta property="og:url" content="https://alexandriacarclinic.com/">
   <meta property="og:image" content="https://alexandriacarclinic.com/media/hero-poster.jpg">
   <meta property="og:site_name" content="Alexandria Car Clinic">
+  <meta property="og:image:alt" content="Alexandria Car Clinic">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#050B16">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050B16'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='24' font-weight='800' fill='%23F1EADB' text-anchor='middle'%3EACC%3C/text%3E%3C/svg%3E">
@@ -415,10 +416,13 @@
       <p class="voice book__note" data-reveal>Tell us about the car. We'll get back to you to confirm a time, or call us now at <a href="tel:+17033708870">703.370.8870</a>.</p>
     </div>
 
-    <!-- data-endpoint: set to a form-service URL (e.g. Formspree) that forwards to Zack's email.
-         Until it is set the form only shows the confirmation and sends nothing. -->
+    <!-- data-endpoint: FormSubmit (https://formsubmit.co/ajax/<email>) forwards each request to the shop's inbox.
+         First submission sends an activation email to that inbox; click it once and the form is live.
+         Until data-endpoint is set the form only shows the confirmation and sends nothing. -->
     <form class="book__form" data-book-form data-endpoint="" novalidate>
-      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <input type="hidden" name="_subject" value="New appointment request (website)">
+      <input type="hidden" name="_template" value="table">
       <div class="field" data-reveal>
         <label class="label field__label" for="f-name">Name</label>
         <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
