@@ -1163,7 +1163,7 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 
 .team {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--element-gap);
   margin-top: clamp(56px, 7vw, 104px);
 }
@@ -1172,6 +1172,8 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
 .team .photo:nth-child(1) img { object-position: 38% 50%; }
 .team .photo:nth-child(2) img { object-position: 42% 50%; }
 .team .photo:nth-child(3) img { object-position: 24% 50%; }
+.team .photo:nth-child(4) img { object-position: 40% 50%; }
+@media (min-width: 641px) and (max-width: 1100px) { .team { grid-template-columns: repeat(2, 1fr); } }
 
 /* ---------- Contact ---------- */
 .visit__note {

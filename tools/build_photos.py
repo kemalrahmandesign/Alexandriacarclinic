@@ -56,10 +56,14 @@ PHOTOS = {
     "DSC07521": dict(src="incoming/DSC07521", out="services/electrical-battery", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
     "DSC07425": dict(src="incoming/DSC07425", out="services/ac-heating", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
     "DSC07524": dict(src="incoming/DSC07524", out="services/belts-hoses-cooling", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
-    "DSC07288": dict(src="incoming/DSC07288", out="services/transmission-replacement", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07288": dict(src="incoming/DSC07288", out="team/team-4", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
     "DSC07337": dict(src="incoming/DSC07337", out="services/collision-repair", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
     "DSC07414": dict(src="incoming/DSC07414", out="services/detailing", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
-    "DSC07370": dict(src="incoming/DSC07370", out="services/engine-replacement", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07370": dict(src="incoming/DSC07370", out="spare/engine-bay-mid-job", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07386": dict(src="incoming/DSC07386", out="services/engine-replacement", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    # placeholder until the standalone transmission photo is uploaded
+    "gears": dict(src="ai-src/transmission-gears", out="services/transmission-replacement",
+        grade=dict(exp=-0.20, contrast=0.60, hi=0.50, sat=1.0, blue=1.2, navy=1.5, warm=1.4, matte=0.3, vig=0.30)),
     "DSC07450": dict(src="incoming/DSC07450", out="team/team-3", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
 }
 
