@@ -28,11 +28,11 @@ PHOTOS = {
     "engine": dict(out="spare/engine-diagnostics-mazda",
         paste=[(185, 955, 465, 1067), (640, 995, 745, 1055), (160, 870, 270, 935), (800, 985, 905, 1035)],
         grade=dict(exp=-0.10, contrast=0.50, hi=0.50, sat=1.08, red=0.82, blue=1.5, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
-    "brakes": dict(out="services/brakes",
+    "brakes": dict(out="spare/brakes-headlamp",
         grade=dict(exp=-0.02, contrast=0.50, hi=0.50, sat=1.10, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     "body": dict(out="services/bodywork-paint",
         grade=dict(exp=-0.05, contrast=0.45, hi=0.30, sat=1.05, blue=1.4, navy=1.6, warm=1.0, matte=0.7, vig=0.26)),
-    "diff2": dict(out="services/differentials",
+    "diff2": dict(out="spare/differentials-mazda",
         box=(0, 207, 1290, 1067),   # crop the Virginia licence plate out of frame (was an ugly blur box)
         grade=dict(exp=-0.10, contrast=0.50, hi=0.50, sat=1.08, red=0.80, blue=1.4, navy=1.8, warm=1.1, matte=0.8, vig=0.28)),
     "transsvc": dict(out="team/team-2",
@@ -61,9 +61,10 @@ PHOTOS = {
     "DSC07414": dict(src="incoming/DSC07414", out="services/detailing", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
     "DSC07370": dict(src="incoming/DSC07370", out="spare/engine-bay-mid-job", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
     "DSC07386": dict(src="incoming/DSC07386", out="services/engine-replacement", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
-    # placeholder until the standalone transmission photo is uploaded
-    "gears": dict(src="ai-src/transmission-gears", out="services/transmission-replacement",
-        grade=dict(exp=-0.20, contrast=0.60, hi=0.50, sat=1.0, blue=1.2, navy=1.5, warm=1.4, matte=0.3, vig=0.30)),
+    "DSC07471": dict(src="incoming/DSC07471", box=(0, 0, 4440, 2960), out="services/lights", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),  # plate cropped out
+    "DSC07478": dict(src="incoming/DSC07478", out="services/brakes", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07489": dict(src="incoming/DSC07489", out="services/differentials", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
+    "DSC07505": dict(src="incoming/DSC07505", out="services/transmission-replacement", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
     "DSC07450": dict(src="incoming/DSC07450", out="team/team-3", grade=dict(exp=-0.10, contrast=0.40, hi=0.45, sat=0.95, red=0.90, blue=1.2, navy=1.3, warm=1.0, matte=0.4, vig=0.25)),
 }
 

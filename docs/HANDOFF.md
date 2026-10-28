@@ -39,11 +39,9 @@ Decision from the user: **fill missing services with generated shots in the inte
 (their call) possibly move the existing real photos to that same look so the set is consistent. Ask which for the
 existing 9 only if unclear; do not ask about the missing 8, just generate.
 
-## Waiting on uploads (Oct 28)
-User wants, but these never arrived (likely >25 MB web-upload limit): Aston brake caliper -> brakes; Aston tail light ->
-new "Lights: repair & restoration" row (shows "photo coming soon" until then, output services/lights.jpg); standalone
-transmission -> Transmission row (gears stock photo is the placeholder); differential -> differentials.
-Done: DSC07386 BMW twin-turbo cover -> engine replacement; DSC07288 tech with transmission -> team/team-4 (4-up team row).
+## Final uploads (Oct 28)
+DSC07471 Aston tail light -> lights (plate cropped out); DSC07478 Aston caliper -> brakes; DSC07489 underside -> differentials;
+DSC07505 transmission on pallet -> transmission row. Only undercoating is still stock/AI.
 
 ## Shop photos (Oct 28)
 13 real photos in media/incoming (Sony DSC07xxx). Unused spares: DSC07386 (BMW engine cover), DSC07459 (Aston, hood up),
