@@ -40,12 +40,12 @@ Decision from the user: **fill missing services with generated shots in the inte
 existing 9 only if unclear; do not ask about the missing 8, just generate.
 
 ## Launch (Oct 28)
-- Form: FormSubmit -> alexcar39@gmail.com (data-endpoint on the form). First real submission sends Zack an activation
-  email; he must click it once. After that FormSubmit offers a random alias to swap in so the address isn't in the page.
+- Form: Web3Forms (api.web3forms.com/submit), access key f63b4207-... in index.html, delivers to alexcar39@gmail.com.
+  Key is public by design. Manage at web3forms.com with that inbox. (FormSubmit was dropped: activation link failed.)
 - Reviews: verbatim excerpts of 6 real Google reviews (Will R., Shegofa N., Naara P., Ryburn R., T. Hayes, Yahu E.).
 - 404.html sends old-site URLs to the home page.
-- Domain: GoDaddy A @ -> 185.199.108-111.153, CNAME www -> kemalrahmandesign.github.io; GitHub Settings -> Pages ->
-  custom domain alexandriacarclinic.com, then Enforce HTTPS. Text number 571.247.6874 still unconfirmed.
+- Domain: nameservers moved from Cloudflare (no login) back to GoDaddy defaults. GoDaddy DNS: A @ -> 185.199.108-111.153,
+  CNAME www -> kemalrahmandesign.github.io; GitHub Settings -> Pages custom domain alexandriacarclinic.com + Enforce HTTPS. Text number 571.247.6874 still unconfirmed.
 
 ## Final uploads (Oct 28)
 DSC07471 Aston tail light -> lights (plate cropped out); DSC07478 Aston caliper -> brakes; DSC07489 underside -> differentials;
