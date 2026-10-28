@@ -648,22 +648,42 @@
         return;
       }
       var endpoint = form.getAttribute('data-endpoint');
-      function finish() { form.hidden = true; done.hidden = false; }
+      var btn = form.querySelector('[type="submit"]');
+      var err = form.querySelector('[data-book-error]');
+      function finish() {
+        form.hidden = true;
+        done.hidden = false;
+        var top = done.getBoundingClientRect().top + window.scrollY - 120;
+        if (hijack) target = clamp(top, 0, maxScroll());
+        else window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+      function fail(msg) {
+        btn.disabled = false;
+        btn.textContent = 'Request appointment';
+        if (err) { err.textContent = msg; err.hidden = false; }
+      }
       if (!endpoint) { finish(); return; }
       var data = {};
       new FormData(form).forEach(function (v, k) { data[k] = v; });
       data.services = Array.prototype.filter.call(
         form.querySelectorAll('[data-svc-chips] input'), function (c) { return c.checked; })
         .map(function (c) { return c.value; }).join(', ');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      if (err) err.hidden = true;
       fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)
       }).then(function (r) {
-        if (!r.ok) throw new Error('bad status');
-        finish();
-      })['catch'](function () {
-        alert('Sorry, that did not send. Please call 703.370.8870.');
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          // FormSubmit answers 200 with success "false" (e.g. form not activated yet)
+          if (!r.ok || j.success === false || j.success === 'false') throw new Error(j.message || 'bad status');
+          finish();
+        });
+      })['catch'](function (e) {
+        if (window.console) console.warn('Booking form:', e && e.message);
+        fail("Sorry, that didn't send. Please call us at 703.370.8870.");
       });
     });
   }

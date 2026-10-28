@@ -1463,3 +1463,8 @@ html.js:not(.reduced) [data-draw].is-in { transform: scaleX(1); }
   .review-card--1, .review-card--3, .review-card--5 { top: 26%; }
   .review-card--2, .review-card--4, .review-card--6 { top: 60%; }
 }
+
+/* author display rules must not override the hidden attribute (form / confirmation swap) */
+[hidden] { display: none !important; }
+.book__error { margin: var(--spacing-14) 0 0; color: #F3B4A8; font-size: 16px; text-transform: none; }
+.btn-pill:disabled { opacity: 0.6; cursor: progress; transform: none; }
