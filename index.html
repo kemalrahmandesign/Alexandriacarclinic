@@ -420,13 +420,13 @@
       <p class="voice book__note" data-reveal>Tell us about the car. We'll get back to you to confirm a time, or call us now at <a href="tel:+17033708870">703.370.8870</a>.</p>
     </div>
 
-    <!-- data-endpoint: FormSubmit (https://formsubmit.co/ajax/<email>) forwards each request to the shop's inbox.
-         First submission sends an activation email to that inbox; click it once and the form is live.
-         Until data-endpoint is set the form only shows the confirmation and sends nothing. -->
-    <form class="book__form" data-book-form data-endpoint="https://formsubmit.co/ajax/alexcar39@gmail.com" novalidate>
-      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
-      <input type="hidden" name="_subject" value="New appointment request (website)">
-      <input type="hidden" name="_template" value="table">
+    <!-- Booking form -> Web3Forms (https://web3forms.com), which emails each request to the shop's inbox
+         (alexcar39@gmail.com). The access key is tied to that inbox and is safe to publish: it can only send there. -->
+    <form class="book__form" data-book-form data-endpoint="https://api.web3forms.com/submit" novalidate>
+      <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New appointment request (website)">
+      <input type="hidden" name="from_name" value="Alexandria Car Clinic website">
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
       <div class="field" data-reveal>
         <label class="label field__label" for="f-name">Name</label>
         <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
